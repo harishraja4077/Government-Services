@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Directory | National Digital Governance Portal</title>
+    <meta name="description" content="Search and apply for all official government services including passport renewal, business licenses, birth certificates, and tax filings online.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div><div id="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-phone"></i> Helpline: 1800-11-2026</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@gov.in</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa-solid fa-globe"></i> Language: </span>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                    <option value="es">EspaÃ±ol</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Government Portal Logo" id="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="header-btn"><i class="fa-solid fa-user-shield"></i> Citizen Portal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Services Directory</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Search & Filter Panel -->
+    <section class="search-filter-section" style="padding: 50px 0 20px 0; background: var(--bg-main);">
+        <div class="container">
+            <div class="search-filter-panel animate-on-scroll">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="services-search" placeholder="Search services (e.g. passport, tax, license, birth certificate)...">
+                </div>
+                <div class="filter-dropdown">
+                    <select id="department-filter">
+                        <option value="all">All Departments</option>
+                        <option value="transport">Department of Transport</option>
+                        <option value="revenue">Revenue & Taxation</option>
+                        <option value="health">Ministry of Health</option>
+                        <option value="external">External Affairs (Passports)</option>
+                        <option value="commerce">Commerce & Industry</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Services Grid -->
+    <section class="services-directory" style="padding: 20px 0 80px 0; background: var(--bg-main);">
+        <div class="container">
+            <div class="card-grid-3">
+                <!-- Service 1: Passport -->
+                <div class="service-card-wrapper" data-department="external">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fa-solid fa-passport"></i>
+                        <h3>Passport Renewal & Issue</h3>
+                        <p>Apply for standard passport booklets, schedule physical verification dates, and track processing steps.</p>
+                        <a href="login.html">Access Portal <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 2: Driver License -->
+                <div class="service-card-wrapper" data-department="transport">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fa-solid fa-id-card-clip"></i>
+                        <h3>Driver License Registry</h3>
+                        <p>Book driving license slot tests, renew expired licenses, or apply for international driver permits.</p>
+                        <a href="login.html">Access Portal <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 3: Property Tax -->
+                <div class="service-card-wrapper" data-department="revenue">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fa-solid fa-landmark"></i>
+                        <h3>Municipal Property Tax</h3>
+                        <p>Calculate annual commercial and residential property assessment tax rates and complete secure payments.</p>
+                        <a href="login.html">Access Portal <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 4: Birth Certificate -->
+                <div class="service-card-wrapper" data-department="health">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fa-solid fa-baby-carriage"></i>
+                        <h3>Birth & Death Registry</h3>
+                        <p>Register newborns, submit clinical certificates, and retrieve certified downloadable PDF records.</p>
+                        <a href="login.html">Access Portal <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 5: Business Incorporation -->
+                <div class="service-card-wrapper" data-department="commerce">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <h3>Business Incorporation</h3>
+                        <p>Submit applications to incorporate new corporate companies and obtain national tax registration codes.</p>
+                        <a href="login.html">Access Portal <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 6: Health Card -->
+                <div class="service-card-wrapper" data-department="health">
+                    <div class="service-card animate-on-scroll">
+                        <i class="fa-solid fa-notes-medical"></i>
+                        <h3>National Health Insurance Card</h3>
+                        <p>Enroll family units in national insurance tables, verify claim payouts, or search accredited local clinics.</p>
+                        <a href="login.html">Access Portal <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Application Process Timeline -->
+    <section class="process-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Application Flow</h2>
+                <p>Four simple operational phases to receive your official credentials online.</p>
+            </div>
+            <div class="timeline animate-on-scroll">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>1. Register Account</h3>
+                        <p>Sign up securely on the citizen portal using your National Identity number and verify credentials.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>2. Choose & Complete Form</h3>
+                        <p>Select the desired service, fill in the digital application form, and upload scanned support documents.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>3. Pay & Verify</h3>
+                        <p>Complete any administrative filing fees online via secure banking. Portal admins will review details.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>4. Final Issue</h3>
+                        <p>Receive your certified digital document in your locker, or trace its dispatch details via secure mail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Downloadable Forms & Resources -->
+    <section class="resources-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Downloadable Forms Repository</h2>
+                <p>Access offline PDF formats of core administrative application papers.</p>
+            </div>
+            <div class="table-card animate-on-scroll">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Form Code</th>
+                                <th>Form Title</th>
+                                <th>Responsible Department</th>
+                                <th>File Size / Format</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FORM-DS1</strong></td>
+                                <td>Passport Application / Reissue Document</td>
+                                <td>External Affairs</td>
+                                <td>1.2 MB (PDF)</td>
+                                <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 6px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Form-DS1...');"><i class="fa-solid fa-download"></i> Download</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>FORM-REV14</strong></td>
+                                <td>Declaration of Residential Property Valuation</td>
+                                <td>Revenue & Taxation</td>
+                                <td>450 KB (PDF)</td>
+                                <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 6px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Form-REV14...');"><i class="fa-solid fa-download"></i> Download</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>FORM-DL2</strong></td>
+                                <td>Commercial Motor Vehicle License Request</td>
+                                <td>Transport Department</td>
+                                <td>820 KB (PDF)</td>
+                                <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 6px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Form-DL2...');"><i class="fa-solid fa-download"></i> Download</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Services FAQs -->
+    <section class="faq-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Clear information regarding portal access, fee parameters, and application timelines.</p>
+            </div>
+            <div class="faq-accordion animate-on-scroll">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>How long does the average portal verification take?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="faq-body">
+                        <p>Most basic filings, such as municipal tax submissions and birth registry applications, are verified automatically within 24 hours. Complex documents like passport checks or land title audits require manual agency verification and generally process within 7 to 10 working days.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>Are transaction fees paid on this portal secure?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="faq-body">
+                        <p>Yes. All banking actions on our site utilize 256-bit SSL encryption standards. Payments are routed through secure, PCI-DSS compliant federal banking gateways. Your card or credential details are never logged on our database.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span>What is the digital locker and how does it function?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="faq-body">
+                        <p>The Digital Locker is a personal storage folder attached directly to your Citizen account. Once an application is approved, the official administrative certificates (e.g., driver license, tax slip) are digitally signed and loaded directly into your locker. You can print, view, or share these files at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Helpline Support & Suggestions -->
+    <section class="helpline-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="contact-info-wrap animate-on-scroll">
+                    <div class="contact-info-card">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <h4>Helpline Phone Bank</h4>
+                            <p>Call toll-free for active application troubleshooting.</p>
+                            <strong style="color: var(--secondary); font-size: 1.2rem;">1800-11-2026</strong>
+                        </div>
+                    </div>
+                    <div class="contact-info-card" style="background: var(--primary-light);">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Department hotlines and support ticket staff are active during the following periods:</p>
+                            <p style="color: var(--secondary); font-weight: 600;">Mon - Fri: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-card animate-on-scroll">
+                    <h3>Submit Service Suggestions</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Help us improve administrative systems by sharing suggestions or reporting portal glitches.</p>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for your valuable feedback!');">
+                        <div class="form-group">
+                            <label>Service Area</label>
+                            <select class="form-control">
+                                <option>Passport Services</option>
+                                <option>Tax Filing Portal</option>
+                                <option>Driver Licensing UI</option>
+                                <option>General Website Glitch</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Feedback</label>
+                            <textarea class="form-control" rows="3" placeholder="Explain your feedback in detail..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%;">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Gov Logo">
+                    </div>
+                    <p style="margin-bottom: 20px;">The official unified digital gate for citizens and businesses to interface with the State Administrative Departments.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Service Directory</a></li>
+                        <li><a href="project.html">Infrastructure Projects</a></li>
+                        <li><a href="blog.html">Press Releases</a></li>
+                        <li><a href="contact.html">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Key Portals</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Citizen Dashboard</a></li>
+                        <li><a href="signup.html">Register Account</a></li>
+                        <li><a href="login.html">Administrative Login</a></li>
+                        <li><a href="404.html">Sitemap Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Official Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-building-flag"></i>
+                        <p>Secretariat Complex, Capitol Plaza, Suite 404, ND 110001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Government Services Portal. All rights reserved. Managed by Department of Information Technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Scripts -->
+    <div id="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+

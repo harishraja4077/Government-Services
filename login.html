@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen & Employee Login | National Digital Governance Portal</title>
+    <meta name="description" content="Sign in to your official citizen or admin account to access your digital locker, submit documents, file returns, or audit system applications.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div><div id="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-phone"></i> Helpline: 1800-11-2026</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@gov.in</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa-solid fa-globe"></i> Language: </span>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                    <option value="es">EspaÃ±ol</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Government Portal Logo" id="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link active">Citizen Portal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Access Government Portal</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>Login</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Login Intro Overview -->
+    <section class="login-intro-section" style="background: var(--bg-main); padding-bottom: 20px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Unified Access Gateway</h2>
+                <p>Welcome to the secure sign-in portal. Access your digital locker, manage active certificates, and file documents directly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Auth Form Section -->
+    <section class="auth-form-section" style="background: var(--bg-main); padding-top: 0; padding-bottom: 80px;">
+        <div class="container">
+            <div class="auth-container animate-on-scroll">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h2>Portal Login</h2>
+                        <p>Access your personalized administration panel</p>
+                    </div>
+                    
+                    <div class="auth-tabs">
+                        <div class="auth-tab-btn active" data-role="user" onclick="document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active')); this.classList.add('active');"><i class="fa-solid fa-user"></i> Citizen Portal</div>
+                        <div class="auth-tab-btn" data-role="admin" onclick="document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active')); this.classList.add('active');"><i class="fa-solid fa-user-shield"></i> Employee Portal</div>
+                    </div>
+                    
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Registered Email Address</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="E.g. citizen@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" class="form-control" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%; margin-top: 15px;">Log In Securely</button>
+                    </form>
+                    
+                    <div class="auth-links">
+                        <a href="signup.html">Create Citizen Account</a>
+                        <a href="#" onclick="event.preventDefault(); alert('Redirecting to password recovery. Check your email for OTP.');">Forgot Password?</a>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 25px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                        <p>Demo Citizens: <strong>citizen@gmail.com</strong> (password123)</p>
+                        <p>Demo Admins: <strong>admin@gov.in</strong> (password123)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Security Features -->
+    <section class="security-features-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cybersecurity Architecture</h2>
+                <p>This portal is engineered under rigorous national cybersecurity guidelines to protect citizen data privacy.</p>
+            </div>
+            <div class="card-grid-3">
+                <div class="quick-card animate-on-scroll delay-1" style="border-top-color: var(--secondary);">
+                    <i class="fa-solid fa-key"></i>
+                    <h4>256-bit Encryption</h4>
+                    <p>All database records and network data streams utilize modern TLS 1.3 certificates to prevent eavesdropping.</p>
+                </div>
+                <div class="quick-card animate-on-scroll delay-2" style="border-top-color: var(--secondary);">
+                    <i class="fa-solid fa-hourglass-end"></i>
+                    <h4>Auto-Timeout Periods</h4>
+                    <p>Accounts automatically lock after 15 minutes of idle session status to mitigate unauthorized workspace access.</p>
+                </div>
+                <div class="quick-card animate-on-scroll delay-3" style="border-top-color: var(--secondary);">
+                    <i class="fa-solid fa-fingerprint"></i>
+                    <h4>Multi-Factor Checks</h4>
+                    <p>Confirm payments or critical document downloads using standard SMS / Email verification codes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Fraud Awareness notice -->
+    <section class="fraud-awareness-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="about-grid" style="align-items: center;">
+                <div class="about-content animate-on-scroll">
+                    <h2>Anti-Fraud Security Advisory</h2>
+                    <p>Protect your credentials. Portal administration and department executives will never request your passwords, debit card pins, or national biometric credentials via text, telephone, or email.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i> Do not access this portal via public cyber cafÃ© routers.</li>
+                        <li><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i> Ensure the browser address bar is exactly <code>https://...</code></li>
+                        <li><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i> Report phishing attempts to <code>cyber.report@gov.in</code></li>
+                    </ul>
+                </div>
+                <div class="about-img animate-on-scroll">
+                    <img src="images/citizen.png" alt="Cyber Security Alert">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Auth Support desk -->
+    <section class="auth-support-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Account Login Support</h2>
+                <p>Encountering glitches accessing your citizen profile? Contact our web team.</p>
+            </div>
+            <div class="stats-grid animate-on-scroll" style="margin-top: 0; background: var(--primary-light);">
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);"><i class="fa-solid fa-envelope"></i></h3>
+                    <p>admin.help@gov.in</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);"><i class="fa-solid fa-clock"></i></h3>
+                    <p>Average recovery: 3 Hrs</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);"><i class="fa-solid fa-square-poll-horizontal"></i></h3>
+                    <p>Resolution: 97.2%</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);"><i class="fa-solid fa-shield"></i></h3>
+                    <p>Secured Servers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Mobile App Promotion -->
+    <section class="mobile-app-section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white;">
+        <div class="container">
+            <div class="about-grid">
+                <div class="newsletter-content animate-on-scroll">
+                    <h2 style="color: white; margin-bottom: 15px;">Download Official Citizen App</h2>
+                    <p style="color: rgba(255,255,255,0.85); margin-bottom: 25px;">Access your digital locker, apply for licenses, and receive neighborhood public warnings directly on your mobile device. Available for Android and iOS systems.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" class="btn btn-primary btn-glow ripple-effect" onclick="event.preventDefault(); alert('Redirecting to Google Play Store...');"><i class="fa-brands fa-google-play"></i> Google Play Store</a>
+                        <a href="#" class="btn btn-secondary" onclick="event.preventDefault(); alert('Redirecting to Apple App Store...');"><i class="fa-brands fa-apple"></i> Apple App Store</a>
+                    </div>
+                </div>
+                <div class="warnings-box animate-on-scroll" style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center;">
+                    <div style="text-align: center;">
+                        <i class="fa-solid fa-qrcode" style="font-size: 8rem; color: var(--secondary);"></i>
+                        <p style="margin-top: 10px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.65);">Scan QR Code to Download</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Gov Logo">
+                    </div>
+                    <p style="margin-bottom: 20px;">The official unified digital gate for citizens and businesses to interface with the State Administrative Departments.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Service Directory</a></li>
+                        <li><a href="project.html">Infrastructure Projects</a></li>
+                        <li><a href="blog.html">Press Releases</a></li>
+                        <li><a href="contact.html">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Key Portals</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Citizen Dashboard</a></li>
+                        <li><a href="signup.html">Register Account</a></li>
+                        <li><a href="login.html">Administrative Login</a></li>
+                        <li><a href="404.html">Sitemap Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Official Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-building-flag"></i>
+                        <p>Secretariat Complex, Capitol Plaza, Suite 404, ND 110001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Government Services Portal. All rights reserved. Managed by Department of Information Technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Scripts -->
+    <div id="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

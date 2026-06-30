@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Grievance Desk | National Digital Governance Portal</title>
+    <meta name="description" content="Reach the national citizen help desk, submit official administrative grievances, find municipal building locations, or view emergency hotline numbers.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div><div id="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-phone"></i> Helpline: 1800-11-2026</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@gov.in</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa-solid fa-globe"></i> Language: </span>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                    <option value="es">EspaÃ±ol</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Government Portal Logo" id="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="header-btn"><i class="fa-solid fa-user-shield"></i> Citizen Portal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Citizen Support & Help Desk</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Department Directory -->
+    <section class="directory-section" style="background: var(--bg-main); padding-bottom: 30px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Administrative Department Directory</h2>
+                <p>Reach out to departments directly for questions concerning policy parameters.</p>
+            </div>
+            <div class="card-grid-3">
+                <div class="quick-card animate-on-scroll delay-1" style="border-top-color: var(--primary);">
+                    <i class="fa-solid fa-passport" style="font-size: 2rem;"></i>
+                    <h4>Passport & Visas</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;"><i class="fa-solid fa-phone"></i> +91-11-2338-1123</p>
+                    <p style="font-size: 0.85rem;"><i class="fa-solid fa-envelope"></i> passport.support@gov.in</p>
+                </div>
+                <div class="quick-card animate-on-scroll delay-2" style="border-top-color: var(--primary);">
+                    <i class="fa-solid fa-file-invoice-dollar" style="font-size: 2rem;"></i>
+                    <h4>Taxes & Collections</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;"><i class="fa-solid fa-phone"></i> +91-11-2338-4450</p>
+                    <p style="font-size: 0.85rem;"><i class="fa-solid fa-envelope"></i> tax.helpdesk@gov.in</p>
+                </div>
+                <div class="quick-card animate-on-scroll delay-3" style="border-top-color: var(--primary);">
+                    <i class="fa-solid fa-bus" style="font-size: 2rem;"></i>
+                    <h4>Transit & Licensing</h4>
+                    <p style="font-size: 0.85rem; margin-top: 5px;"><i class="fa-solid fa-phone"></i> +91-11-2338-9910</p>
+                    <p style="font-size: 0.85rem;"><i class="fa-solid fa-envelope"></i> licensing.rto@gov.in</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Locations Map -->
+    <section class="map-section" style="background: var(--bg-main); padding-top: 20px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Secretariat Complex Locations</h2>
+                <p>Administrative headquarters and regional citizen walk-in offices.</p>
+            </div>
+            <div class="map-container animate-on-scroll">
+                <!-- Mock Map visual with premium background and pointer -->
+                <iframe src="https://www.google.com/maps/embed?pb=!11m18!1m12!1m3!1d3501.9967272895697!2d77.21557007624103!3d28.63050117566531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd365dfbe13b%3A0xe1047805175cfeb7!2sSecretariat%20Building!5e0!3m2!1sen!2sin!4v1714498421045!5m2!1sen!2sin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Grievance / Inquiry Form -->
+    <section class="grievance-form-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Register Official Inquiry / Grievance</h2>
+                <p>Your concern will be directed to the grievance officer of the selected department.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="form-card animate-on-scroll">
+                    <h3>Electronic Grievance Filing</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Submit a ticket. You can track progress details inside your Citizen Portal.</p>
+                    <form onsubmit="event.preventDefault(); alert('Grievance logged successfully! Ticket ID: GRV-102941');">
+                        <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Your Full Name</label>
+                                <input type="text" class="form-control" required placeholder="E.g. John Doe">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" required placeholder="E.g. citizen@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Target Administrative Department</label>
+                            <select class="form-control">
+                                <option>Ministry of External Affairs</option>
+                                <option>Department of Revenue & Taxes</option>
+                                <option>Department of Transport</option>
+                                <option>Ministry of Urban Planning</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Description of Complaint / Inquiry</label>
+                            <textarea class="form-control" rows="4" placeholder="Explain the context or request parameter..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%;">File Complaint Ticket</button>
+                    </form>
+                </div>
+                <div class="contact-info-wrap animate-on-scroll">
+                    <div class="contact-info-card" style="background: var(--primary);">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h4>Administrative Guarantee</h4>
+                            <p>Every logged citizen grievance is backed by the National Governance Guarantee Act. Response feedback will be filed within the defined response timeframes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Grievance Timeline -->
+    <section class="process-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Grievance Lifecycle</h2>
+                <p>Tracking the lifecycle of your filed grievance tickets from initial receipt to final solution.</p>
+            </div>
+            <div class="timeline animate-on-scroll">
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>1. Submission & Auto-Log</h3>
+                        <p>Ticket is verified, logged into the system, and a tracking ID code is auto-emailed to the citizen.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>2. Officer Assignment</h3>
+                        <p>The ticket is routed to the corresponding department's grievance officer for factual checks.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-content">
+                        <h3>3. Inspection & Remediation</h3>
+                        <p>The assigned officer inspects the core complaint and prepares a correction plan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-content">
+                        <h3>4. SLA Close</h3>
+                        <p>The ticket is closed. The citizen receives an official resolution statement and can request reviews.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Emergency Contacts -->
+    <section class="emergency-contacts-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Critical Public Safety hotlines</h2>
+                <p>Dial these numbers directly for immediate emergency assistance. Active 24/7.</p>
+            </div>
+            <div class="card-grid-4 animate-on-scroll">
+                <div class="quick-card" style="border-top-color: #ef4444; text-align: center;">
+                    <i class="fa-solid fa-shield-heart" style="color: #ef4444;"></i>
+                    <h4>Police Assistance</h4>
+                    <strong style="font-size: 1.5rem; color: var(--primary);">100</strong>
+                </div>
+                <div class="quick-card" style="border-top-color: #f97316; text-align: center;">
+                    <i class="fa-solid fa-fire-burner" style="color: #f97316;"></i>
+                    <h4>Fire Dispatch</h4>
+                    <strong style="font-size: 1.5rem; color: var(--primary);">101</strong>
+                </div>
+                <div class="quick-card" style="border-top-color: #22c55e; text-align: center;">
+                    <i class="fa-solid fa-truck-medical" style="color: #22c55e;"></i>
+                    <h4>Ambulance / Health</h4>
+                    <strong style="font-size: 1.5rem; color: var(--primary);">102</strong>
+                </div>
+                <div class="quick-card" style="border-top-color: #3b82f6; text-align: center;">
+                    <i class="fa-solid fa-house-crack" style="color: #3b82f6;"></i>
+                    <h4>Disaster Relief</h4>
+                    <strong style="font-size: 1.5rem; color: var(--primary);">108</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: SLA Resolution Commitments -->
+    <section class="service-sla-section" style="background: var(--primary-dark); color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Service SLA Commitments</h2>
+                <p style="color: rgba(255,255,255,0.75);">We strive for transparency and speed. View average actual response times from our audit boards.</p>
+            </div>
+            <div class="stats-grid animate-on-scroll" style="margin-top: 0; background: var(--primary-light);">
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);">18 Hours</h3>
+                    <p>Average Inquiry Response</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);">42 Hours</h3>
+                    <p>Average Grievance Resolve</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);">99.2%</h3>
+                    <p>Customer Satisfaction Index</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="color: var(--secondary);">0%</h3>
+                    <p>Paper Filing Waste</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Gov Logo">
+                    </div>
+                    <p style="margin-bottom: 20px;">The official unified digital gate for citizens and businesses to interface with the State Administrative Departments.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Service Directory</a></li>
+                        <li><a href="project.html">Infrastructure Projects</a></li>
+                        <li><a href="blog.html">Press Releases</a></li>
+                        <li><a href="contact.html">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Key Portals</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Citizen Dashboard</a></li>
+                        <li><a href="signup.html">Register Account</a></li>
+                        <li><a href="login.html">Administrative Login</a></li>
+                        <li><a href="404.html">Sitemap Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Official Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-building-flag"></i>
+                        <p>Secretariat Complex, Capitol Plaza, Suite 404, ND 110001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Government Services Portal. All rights reserved. Managed by Department of Information Technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Scripts -->
+    <div id="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+

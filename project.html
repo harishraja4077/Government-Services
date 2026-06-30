@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Projects & Initiatives | National Digital Governance Portal</title>
+    <meta name="description" content="Monitor public infrastructure projects, track taxpayer fund distribution, view impact statistics, or submit neighborhood reports online.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div><div id="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-phone"></i> Helpline: 1800-11-2026</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@gov.in</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa-solid fa-globe"></i> Language: </span>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                    <option value="es">EspaÃ±ol</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Government Portal Logo" id="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link active">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="header-btn"><i class="fa-solid fa-user-shield"></i> Citizen Portal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>National Projects & Public Works</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>Projects</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Project Filter buttons -->
+    <section class="projects-filter-section" style="padding: 50px 0 20px 0; background: var(--bg-main);">
+        <div class="container">
+            <div class="project-filter-nav animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All Sectors</button>
+                <button class="filter-btn" data-filter="infrastructure">Transport & Roads</button>
+                <button class="filter-btn" data-filter="energy">Green Energy</button>
+                <button class="filter-btn" data-filter="digital">Digital India</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Projects Grid -->
+    <section class="projects-grid-section" style="padding: 20px 0 80px 0; background: var(--bg-main);">
+        <div class="container">
+            <div class="card-grid-3">
+                <!-- Project 1 -->
+                <div class="project-card animate-on-scroll" data-category="infrastructure">
+                    <div class="project-img">
+                        <img src="images/project.png" alt="Smart Urban Transit">
+                        <div class="project-badge">Active</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Smart Urban Transit Project</h3>
+                        <p>Deploying energy-efficient electric transport vectors across main city intersections to reduce pollution index levels.</p>
+                        <div class="project-progress-container">
+                            <div class="project-progress-bar">
+                                <div class="project-progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="project-progress-meta">
+                                <span>75% Completed</span>
+                                <span>Est. Dec 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card animate-on-scroll delay-1" data-category="energy">
+                    <div class="project-img">
+                        <img src="images/project.png" alt="Green Energy Solar Grid">
+                        <div class="project-badge">Active</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Solar Green Grid Expansion</h3>
+                        <p>Integrating photovoltaic smart panels on street facades to power civic municipal utilities cleanly.</p>
+                        <div class="project-progress-container">
+                            <div class="project-progress-bar">
+                                <div class="project-progress-fill" style="width: 45%;"></div>
+                            </div>
+                            <div class="project-progress-meta">
+                                <span>45% Completed</span>
+                                <span>Est. Aug 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card animate-on-scroll delay-2" data-category="digital">
+                    <div class="project-img">
+                        <img src="images/project.png" alt="National Fiber Network">
+                        <div class="project-badge">Completed</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Rural Fiber Network Expansion</h3>
+                        <p>Laying down fiber optic networks to link secondary schools in rural municipalities with smart databases.</p>
+                        <div class="project-progress-container">
+                            <div class="project-progress-bar">
+                                <div class="project-progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="project-progress-meta">
+                                <span>100% Completed</span>
+                                <span>Done: May 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card animate-on-scroll" data-category="infrastructure">
+                    <div class="project-img">
+                        <img src="images/project.png" alt="Highway Expansion">
+                        <div class="project-badge">Active</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Capitol Ring Road Highway</h3>
+                        <p>Expanding the central capital arterial beltway into an 8-lane expressway to mitigate city transit congestion.</p>
+                        <div class="project-progress-container">
+                            <div class="project-progress-bar">
+                                <div class="project-progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="project-progress-meta">
+                                <span>60% Completed</span>
+                                <span>Est. Apr 2027</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card animate-on-scroll delay-1" data-category="energy">
+                    <div class="project-img">
+                        <img src="images/project.png" alt="Wind Farm Grid">
+                        <div class="project-badge">Planned</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Coastal Wind Farm Grid</h3>
+                        <p>Erecting offshore offshore wind turbines to harness marine winds and supply power to eastern districts.</p>
+                        <div class="project-progress-container">
+                            <div class="project-progress-bar">
+                                <div class="project-progress-fill" style="width: 5%;"></div>
+                            </div>
+                            <div class="project-progress-meta">
+                                <span>5% Completed</span>
+                                <span>Est. Jun 2028</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card animate-on-scroll delay-2" data-category="digital">
+                    <div class="project-img">
+                        <img src="images/project.png" alt="Hospital EHR Portal">
+                        <div class="project-badge">Active</div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Hospital EHR Portal System</h3>
+                        <p>Constructing a unified citizen Health Records portal to sync clinical patient charts across public hospitals.</p>
+                        <div class="project-progress-container">
+                            <div class="project-progress-bar">
+                                <div class="project-progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="project-progress-meta">
+                                <span>85% Completed</span>
+                                <span>Est. Oct 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Impact Stats Section -->
+    <section class="impact-stats-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Public Infrastructure Milestones</h2>
+                <p>A transparent breakdown of achievements completed over the last administrative calendar cycle.</p>
+            </div>
+            <div class="stats-grid animate-on-scroll" style="margin-top: 0;">
+                <div class="stat-item">
+                    <h3>1,200 km</h3>
+                    <p>Expressways Constructed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>550 MW</h3>
+                    <p>Clean Solar Yield Added</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4,500+</h3>
+                    <p>Rural Villages Connected</p>
+                </div>
+                <div class="stat-item">
+                    <h3>92.8%</h3>
+                    <p>Project Delivery Index</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PPP Investment Info -->
+    <section class="ppp-info-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <h2>Public-Private Partnership Framework</h2>
+                    <p>To accelerate developmental milestones, the ministry encourages PPP investments. Corporate groups and private contractors can bid on designated municipal tenders under federal legal oversight.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-handshake"></i> Structured revenue sharing guidelines</li>
+                        <li><i class="fa-solid fa-scale-balanced"></i> Fair arbitration and legal risk coverage</li>
+                        <li><i class="fa-solid fa-file-contract"></i> Long-term concession agreements</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary btn-glow ripple-effect">Download PPP Policy Guide</a>
+                </div>
+                <div class="about-img animate-on-scroll">
+                    <img src="images/team.png" alt="Corporate Bidding Advisory">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Suggest a Project Form / Issue Reporter -->
+    <section class="citizen-feedback-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Citizen Suggestion Desk & Oversight</h2>
+                <p>Is there a public road pothole or utility glitch in your sector? Report it directly to prompt inspector review.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="form-card animate-on-scroll">
+                    <h3>Report Public Property Faults</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Include localized sector details to accelerate dispatch speed.</p>
+                    <form onsubmit="event.preventDefault(); alert('Issue report logged successfully. Tracking ID: REQ-449102');">
+                        <div class="form-group">
+                            <label>Property Sector Category</label>
+                            <select class="form-control">
+                                <option>Road Potholes / Damage</option>
+                                <option>Streetlight Malfunction</option>
+                                <option>Water Grid Leakage</option>
+                                <option>Public Sanitation issue</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Geographic Coordinates / Address</label>
+                            <input type="text" class="form-control" placeholder="E.g. Corner of 5th Ave and Maple St" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Detailed Description</label>
+                            <textarea class="form-control" rows="3" placeholder="Provide extra description details..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent btn-glow ripple-effect" style="width: 100%;">Submit Issue Ticket</button>
+                    </form>
+                </div>
+                <div class="contact-info-wrap animate-on-scroll">
+                    <div class="contact-info-card" style="background: var(--primary);">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <div>
+                            <h4>SLA Resolution Timeframes</h4>
+                            <p>All citizen issue tickets are addressed within the designated service periods:</p>
+                            <p style="color: var(--secondary); font-weight: 600; margin-top: 5px;">Road Repair: 72 Hours max</p>
+                            <p style="color: var(--secondary); font-weight: 600;">Power Grids: 12 Hours max</p>
+                            <p style="color: var(--secondary); font-weight: 600;">Water Grid: 24 Hours max</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Tender Bulletins Board -->
+    <section class="tenders-section" style="background: var(--primary-dark); color: white;">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Active Commercial Bidding Tenders</h2>
+                <p style="color: rgba(255,255,255,0.75);">Open tenders for industrial suppliers and construction firms.</p>
+            </div>
+            <div class="table-card animate-on-scroll" style="background: var(--primary-light); border-color: rgba(255,255,255,0.1);">
+                <div class="table-responsive">
+                    <table style="color: white;">
+                        <thead>
+                            <tr>
+                                <th style="color: var(--secondary);">Tender ID</th>
+                                <th style="color: var(--secondary);">Tender Summary</th>
+                                <th style="color: var(--secondary);">Value Allocation</th>
+                                <th style="color: var(--secondary);">Closing Date</th>
+                                <th style="color: var(--secondary);">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>TEN-EXP-2026</strong></td>
+                                <td>Expressway Bridge Concrete Foundations Supply</td>
+                                <td>$4.2 Million</td>
+                                <td>July 15, 2026</td>
+                                <td><a href="#" class="btn btn-accent btn-glow ripple-effect" style="padding: 6px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Redirecting to Tender Bid Portal...');">Apply Bid</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TEN-SOL-2026</strong></td>
+                                <td>15,000 High-Capacity Lithium Grid Storage Units</td>
+                                <td>$2.8 Million</td>
+                                <td>August 02, 2026</td>
+                                <td><a href="#" class="btn btn-accent btn-glow ripple-effect" style="padding: 6px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Redirecting to Tender Bid Portal...');">Apply Bid</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Gov Logo">
+                    </div>
+                    <p style="margin-bottom: 20px;">The official unified digital gate for citizens and businesses to interface with the State Administrative Departments.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Service Directory</a></li>
+                        <li><a href="project.html">Infrastructure Projects</a></li>
+                        <li><a href="blog.html">Press Releases</a></li>
+                        <li><a href="contact.html">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Key Portals</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Citizen Dashboard</a></li>
+                        <li><a href="signup.html">Register Account</a></li>
+                        <li><a href="login.html">Administrative Login</a></li>
+                        <li><a href="404.html">Sitemap Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Official Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-building-flag"></i>
+                        <p>Secretariat Complex, Capitol Plaza, Suite 404, ND 110001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Government Services Portal. All rights reserved. Managed by Department of Information Technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Scripts -->
+    <div id="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+

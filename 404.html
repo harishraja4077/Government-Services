@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | National Digital Governance Portal</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div><div id="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-phone"></i> Helpline: 1800-11-2026</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@gov.in</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa-solid fa-globe"></i> Language: </span>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                    <option value="es">EspaÃ±ol</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Government Portal Logo" id="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="header-btn"><i class="fa-solid fa-user-shield"></i> Citizen Portal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Error 404</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>404 Not Found</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: 404 Error Main Message -->
+    <section class="error-main-section" style="background: var(--bg-main); padding-bottom: 20px;">
+        <div class="container">
+            <div class="error-404-container animate-on-scroll">
+                <div class="error-code">404</div>
+                <h2 class="error-title">Official Page Not Found</h2>
+                <p class="error-text">The government administrative page you are looking for has been relocated, archived, or does not exist. Verify the URL credentials or return home.</p>
+                <a href="index.html" class="btn btn-primary btn-glow ripple-effect"><i class="fa-solid fa-house-chimney"></i> Return to Homepage</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Search Portal Bar -->
+    <section class="search-section" style="background: var(--bg-main); padding-top: 0; padding-bottom: 50px;">
+        <div class="container">
+            <div class="search-filter-panel animate-on-scroll" style="max-width: 700px; margin: 0 auto;">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search the portal directory (e.g. passport, tax, news)..." onkeypress="if(event.key === 'Enter') { alert('Searching for: ' + this.value); }">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Suggested Popular Shortcuts -->
+    <section class="services-shortcut-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Suggested Popular Pages</h2>
+                <p>These core portals are heavily accessed by citizens daily.</p>
+            </div>
+            <div class="card-grid-3">
+                <div class="quick-card animate-on-scroll delay-1" style="border-top-color: var(--secondary); text-align: center;">
+                    <i class="fa-solid fa-passport"></i>
+                    <h3>Passport Portal</h3>
+                    <p style="margin-bottom: 15px;">Apply for standard passport renewals and schedules.</p>
+                    <a href="services.html" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 15px; font-size: 0.8rem;">Explore</a>
+                </div>
+                <div class="quick-card animate-on-scroll delay-2" style="border-top-color: var(--secondary); text-align: center;">
+                    <i class="fa-solid fa-id-card-clip"></i>
+                    <h3>License Portal</h3>
+                    <p style="margin-bottom: 15px;">Manage driver licensing checks and test slots.</p>
+                    <a href="services.html" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 15px; font-size: 0.8rem;">Explore</a>
+                </div>
+                <div class="quick-card animate-on-scroll delay-3" style="border-top-color: var(--secondary); text-align: center;">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <h3>Tax Return Desk</h3>
+                    <p style="margin-bottom: 15px;">File annual municipal property tax returns online.</p>
+                    <a href="services.html" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 15px; font-size: 0.8rem;">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Report Broken Link Form -->
+    <section class="report-link-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <h2>Report Broken Link to IT Admin</h2>
+                    <p>Help us improve digital systems. If you accessed a dead link from a redirect, file a brief notification ticket to help our engineering teams audit it.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Automated referral logging</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Corrected within 24 hours</li>
+                        <li><i class="fa-solid fa-circle-check"></i> No authentication required</li>
+                    </ul>
+                </div>
+                <div class="form-card animate-on-scroll">
+                    <h3>Report Dead Link</h3>
+                    <form onsubmit="event.preventDefault(); alert('Broken link report submitted! Thank you.');">
+                        <div class="form-group">
+                            <label>URL You Attempted to Access</label>
+                            <input type="text" class="form-control" placeholder="E.g. services.html#licensing" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Where Did You Find This Link?</label>
+                            <select class="form-control">
+                                <option>Homepage Quick Cards</option>
+                                <option>External Search Engine</option>
+                                <option>Received in SMS Alert</option>
+                                <option>Typo in Address Bar</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%;">Submit Link Glitch</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Site Map Directory -->
+    <section class="sitemap-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portal Directory Sitemap</h2>
+                <p>Browse the entire categorical layout structure of our platform.</p>
+            </div>
+            <div class="card-grid-4 animate-on-scroll">
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;"><i class="fa-solid fa-house"></i> Home Services</h4>
+                    <ul class="footer-links" style="line-height: 2;">
+                        <li><a href="index.html" style="color: var(--text-muted);">Landing Overview</a></li>
+                        <li><a href="index.html#stats" style="color: var(--text-muted);">Portal Stats</a></li>
+                        <li><a href="index.html#testimonials" style="color: var(--text-muted);">Citizen Reviews</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;"><i class="fa-solid fa-briefcase"></i> Citizen Portals</h4>
+                    <ul class="footer-links" style="line-height: 2;">
+                        <li><a href="services.html" style="color: var(--text-muted);">Passport Services</a></li>
+                        <li><a href="services.html" style="color: var(--text-muted);">Tax Services</a></li>
+                        <li><a href="services.html" style="color: var(--text-muted);">Licensing Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;"><i class="fa-solid fa-road"></i> Infrastructure</h4>
+                    <ul class="footer-links" style="line-height: 2;">
+                        <li><a href="project.html" style="color: var(--text-muted);">Smart City Projects</a></li>
+                        <li><a href="project.html" style="color: var(--text-muted);">Tenders Board</a></li>
+                        <li><a href="project.html" style="color: var(--text-muted);">PPP Framework</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 15px;"><i class="fa-solid fa-shield-halved"></i> Authentication</h4>
+                    <ul class="footer-links" style="line-height: 2;">
+                        <li><a href="login.html" style="color: var(--text-muted);">Citizen Login</a></li>
+                        <li><a href="signup.html" style="color: var(--text-muted);">Create Account</a></li>
+                        <li><a href="login.html" style="color: var(--text-muted);">Admin Portal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: IT Help Desk Support Banner -->
+    <section class="support-banner-section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white;">
+        <div class="container">
+            <div class="about-grid" style="align-items: center;">
+                <div class="newsletter-content animate-on-scroll">
+                    <h2 style="color: white; margin-bottom: 15px;">Need Direct IT Portal Support?</h2>
+                    <p style="color: rgba(255,255,255,0.85); margin-bottom: 0;">Our webmasters and administrative technicians are active. Open an incident log or chat directly.</p>
+                </div>
+                <div class="newsletter-content animate-on-scroll" style="text-align: right;">
+                    <a href="contact.html" class="btn btn-accent btn-glow ripple-effect"><i class="fa-solid fa-headset"></i> Contact Tech Help Desk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Gov Logo">
+                    </div>
+                    <p style="margin-bottom: 20px;">The official unified digital gate for citizens and businesses to interface with the State Administrative Departments.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Service Directory</a></li>
+                        <li><a href="project.html">Infrastructure Projects</a></li>
+                        <li><a href="blog.html">Press Releases</a></li>
+                        <li><a href="contact.html">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Key Portals</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Citizen Dashboard</a></li>
+                        <li><a href="signup.html">Register Account</a></li>
+                        <li><a href="login.html">Administrative Login</a></li>
+                        <li><a href="404.html">Sitemap Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Official Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-building-flag"></i>
+                        <p>Secretariat Complex, Capitol Plaza, Suite 404, ND 110001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Government Services Portal. All rights reserved. Managed by Department of Information Technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Scripts -->
+    <div id="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+

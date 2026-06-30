@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Official Press Releases | National Digital Governance Portal</title>
+    <meta name="description" content="Read the latest official national government press statements, administrative policy changes, emergency alerts, or take part in citizen community polls.">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<div class="cursor-dot"></div><div class="cursor-ring"></div><div id="scroll-progress"></div>
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span><i class="fa-solid fa-phone"></i> Helpline: 1800-11-2026</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@gov.in</span>
+            </div>
+            <div class="top-bar-right">
+                <span><i class="fa-solid fa-globe"></i> Language: </span>
+                <select id="lang-select">
+                    <option value="en">English</option>
+                    <option value="hi">à¤¹à¤¿à¤¨à¥à¤¦à¥€</option>
+                    <option value="es">EspaÃ±ol</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="index.html">
+                    <img src="images/logo.webp" alt="Government Portal Logo" id="logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link active">News</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="login.html" class="header-btn"><i class="fa-solid fa-user-shield"></i> Citizen Portal</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Press Office & Bulletins</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span>News</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Featured News Spotlight -->
+    <section class="featured-news-section" style="background: var(--bg-main); padding-bottom: 30px;">
+        <div class="container">
+            <div class="blog-featured animate-on-scroll">
+                <div class="featured-img">
+                    <img src="images/hero.png" alt="Smart City Infrastructure Banner">
+                </div>
+                <div class="featured-content">
+                    <div class="blog-meta">
+                        <span><i class="fa-solid fa-calendar"></i> June 28, 2026</span>
+                        <span><i class="fa-solid fa-building"></i> Cabinet Secretariat</span>
+                    </div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 15px;">Smart City Digitization Bill Formally Passed in Assembly</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;">The National assembly has officially ratified the E-Governance and Smart Infrastructure Act, laying down legal blueprints for standardizing biometric identity usage and municipal database synchronization over the next two fiscal years.</p>
+                    <div>
+                        <a href="#" class="btn btn-primary btn-glow ripple-effect" onclick="event.preventDefault(); alert('Press Release Read More...');">Read Press Statement <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: General News Grid -->
+    <section class="news-grid-section" style="background: var(--bg-main); padding-top: 20px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="card-grid-3">
+                <!-- Card 1 -->
+                <div class="blog-card animate-on-scroll">
+                    <div class="blog-img">
+                        <img src="images/project.png" alt="Tax Returns">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-solid fa-calendar"></i> June 25, 2026</span>
+                            <span><i class="fa-solid fa-calculator"></i> Treasury Dept</span>
+                        </div>
+                        <h3>Tax Return Filing Deadline Extended</h3>
+                        <p>Municipal property and corporate annual declarations deadlines have been shifted to August 31st to accommodate banking upgrades.</p>
+                        <a href="#" class="blog-link" onclick="event.preventDefault(); alert('Opening article...');">Full Story <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="blog-card animate-on-scroll delay-1">
+                    <div class="blog-img">
+                        <img src="images/citizen.png" alt="Scholarship Registry">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-solid fa-calendar"></i> June 18, 2026</span>
+                            <span><i class="fa-solid fa-graduation-cap"></i> Education Dept</span>
+                        </div>
+                        <h3>National Scholarship Pools Open For Applicants</h3>
+                        <p>Over $40 Million in federal educational grants has been opened to low-income students registering at certified colleges.</p>
+                        <a href="#" class="blog-link" onclick="event.preventDefault(); alert('Opening article...');">Full Story <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="blog-card animate-on-scroll delay-2">
+                    <div class="blog-img">
+                        <img src="images/hero.png" alt="Transit Routes">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-solid fa-calendar"></i> June 12, 2026</span>
+                            <span><i class="fa-solid fa-bus"></i> Transit Board</span>
+                        </div>
+                        <h3>E-Bus Transit Lines Commencing Tests</h3>
+                        <p>Four new zero-emission transit routes will run pilot routes in suburban wards starting next Monday. Fare will be free for senior cardholders.</p>
+                        <a href="#" class="blog-link" onclick="event.preventDefault(); alert('Opening article...');">Full Story <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Media Gallery (Video & Images) -->
+    <section class="media-gallery-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Media & Press Conferences Gallery</h2>
+                <p>Watch official statements and video bulletins directly from administrative briefings.</p>
+            </div>
+            <div class="card-grid-3">
+                <div class="project-card animate-on-scroll" style="border: none;">
+                    <div class="project-img" style="height: 180px;">
+                        <img src="images/hero.png" alt="Conference Video">
+                        <div class="project-badge" style="background: var(--secondary); color: var(--primary-dark); font-size: 1.1rem; padding: 10px 15px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" onclick="alert('Playing Cabinet Conference Video...');"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="project-card-content" style="padding: 15px 0;">
+                        <h4>Cabinet Briefing: Smart Act Ratification</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Duration: 12 mins | June 28, 2026</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll delay-1" style="border: none;">
+                    <div class="project-img" style="height: 180px;">
+                        <img src="images/project.png" alt="Conference Video">
+                        <div class="project-badge" style="background: var(--secondary); color: var(--primary-dark); font-size: 1.1rem; padding: 10px 15px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" onclick="alert('Playing Transit Launch Video...');"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="project-card-content" style="padding: 15px 0;">
+                        <h4>Electric E-Bus Ribbon Cutting Ceremony</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Duration: 5 mins | June 12, 2026</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll delay-2" style="border: none;">
+                    <div class="project-img" style="height: 180px;">
+                        <img src="images/citizen.png" alt="Conference Video">
+                        <div class="project-badge" style="background: var(--secondary); color: var(--primary-dark); font-size: 1.1rem; padding: 10px 15px; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer;" onclick="alert('Playing Digital ID Tutorial Video...');"><i class="fa-solid fa-play"></i></div>
+                    </div>
+                    <div class="project-card-content" style="padding: 15px 0;">
+                        <h4>Interactive Tutorial: Portal Setup & Locker Guide</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Duration: 8 mins | June 05, 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Emergency Alerts -->
+    <section class="emergency-alerts-section" style="background: var(--bg-main);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real-Time Emergency Alerts & Road Warnings</h2>
+                <p>Public warnings cataloged by security and weather emergency offices.</p>
+            </div>
+            <div class="notifications-list animate-on-scroll" style="max-width: 800px; margin: 0 auto;">
+                <div class="notification-item alert-priority">
+                    <div class="notification-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+                    <div class="notification-content">
+                        <h5>High Weather Alert: Regional Electrical Thunderstorms</h5>
+                        <p>High electrical thunderstorm cycles are expected across northern districts tonight. Citizens are advised to secure outdoor appliances and expect potential minor power brownouts.</p>
+                        <div class="notification-time">Declared: 2 Hours Ago | Disaster Management</div>
+                    </div>
+                </div>
+                <div class="notification-item" style="border-left-color: var(--accent);">
+                    <div class="notification-icon"><i class="fa-solid fa-road-barrier"></i></div>
+                    <div class="notification-content">
+                        <h5>Avenue 5 Underpass Expansion Detours</h5>
+                        <p>Main underpass construction will block vehicular lanes on Avenue 5 between 10:00 PM and 5:00 AM daily. Use alternate city ring road express paths.</p>
+                        <div class="notification-time">Declared: 1 Day Ago | Dept of Transit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Community Polls -->
+    <section class="community-poll-section" style="background: var(--bg-card);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <h2>Democratic Feedback: Community Opinion Polls</h2>
+                    <p>Participate directly in municipal decisions. Let your voice guide administrative policy planning. Results are compiled and published directly to city cabinets monthly.</p>
+                    <ul class="about-features">
+                        <li><i class="fa-solid fa-circle-check"></i> Anonymous ballot protection</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Verifiable census integration</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Direct legislative review</li>
+                    </ul>
+                </div>
+                <div class="form-card animate-on-scroll">
+                    <h3>Active Poll: Transit Green Priority</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Should the municipal transit board restrict private car access in downtown grids on weekends to prioritize bus lanes?</p>
+                    <form onsubmit="event.preventDefault(); alert('Your vote has been logged anonymously. Thank you!');">
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 10px;">
+                            <label class="form-check" style="margin: 0; background: var(--bg-input); padding: 12px; border-radius: var(--radius-md);">
+                                <input type="radio" name="poll-vote" value="yes" required> Yes, prioritize green transit lanes
+                            </label>
+                            <label class="form-check" style="margin: 0; background: var(--bg-input); padding: 12px; border-radius: var(--radius-md);">
+                                <input type="radio" name="poll-vote" value="no"> No, keep roads open for cars
+                            </label>
+                            <label class="form-check" style="margin: 0; background: var(--bg-input); padding: 12px; border-radius: var(--radius-md);">
+                                <input type="radio" name="poll-vote" value="neutral"> Undecided / Need more research
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%; margin-top: 15px;">Cast Ballot Vote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Gazette & Archives Directory -->
+    <section class="archives-section" style="background: linear-gradient(135deg, var(--primary), var(--primary-light)); color: white;">
+        <div class="container">
+            <div class="about-grid" style="align-items: center;">
+                <div class="newsletter-content animate-on-scroll">
+                    <h2 style="color: white; margin-bottom: 15px;">Official Gazette Digital Archives</h2>
+                    <p style="color: rgba(255,255,255,0.85); margin-bottom: 20px;">Search official legislative bills, government notices, executive declarations, or judicial reports issued from 1980 through 2026.</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" class="btn btn-accent btn-glow ripple-effect" onclick="event.preventDefault(); alert('Accessing Archives Database...');"><i class="fa-solid fa-folder-open"></i> Open Gazette Database</a>
+                    </div>
+                </div>
+                <div class="newsletter-content animate-on-scroll" style="text-align: right;">
+                    <i class="fa-solid fa-cabinet-filing float-element" style="font-size: 8rem; color: rgba(255,255,255,0.1);"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logo.webp" alt="Gov Logo">
+                    </div>
+                    <p style="margin-bottom: 20px;">The official unified digital gate for citizens and businesses to interface with the State Administrative Departments.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Directories</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Service Directory</a></li>
+                        <li><a href="project.html">Infrastructure Projects</a></li>
+                        <li><a href="blog.html">Press Releases</a></li>
+                        <li><a href="contact.html">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Key Portals</h3>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Citizen Dashboard</a></li>
+                        <li><a href="signup.html">Register Account</a></li>
+                        <li><a href="login.html">Administrative Login</a></li>
+                        <li><a href="404.html">Sitemap Directory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Official Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-building-flag"></i>
+                        <p>Secretariat Complex, Capitol Plaza, Suite 404, ND 110001</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Government Services Portal. All rights reserved. Managed by Department of Information Technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top & Scripts -->
+    <div id="back-to-top"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
