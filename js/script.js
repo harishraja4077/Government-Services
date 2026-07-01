@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
             users.push({ name, email, password: pass, role: 'user' });
             localStorage.setItem('registeredUsers', JSON.stringify(users));
             localStorage.setItem('currentUser', JSON.stringify({ name, email, role: 'user' }));
-            alert('Registration Successful!'); window.location.href = 'userdashboard.html';
+            alert('Registration Successful!'); window.location.href = 'login.html';
         });
     }
     // Login
