@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,16 +31,19 @@
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link active"><i class="fa-solid fa-gauge-high"></i> Admin Console</a>
+                    <a href="#" class="sidebar-link active" onclick="switchDashTab(event, 'tab-overview')"><i class="fa-solid fa-gauge-high"></i> Console Overview</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="services.html" class="sidebar-link"><i class="fa-solid fa-list"></i> Services Config</a>
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-approvals')"><i class="fa-solid fa-file-signature"></i> Approvals & Grievances</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="project.html" class="sidebar-link"><i class="fa-solid fa-industry"></i> City Projects</a>
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-users')"><i class="fa-solid fa-users"></i> User Management</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="blog.html" class="sidebar-link"><i class="fa-solid fa-bullhorn"></i> News Publisher</a>
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-system')"><i class="fa-solid fa-server"></i> System & Publisher</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-audit')"><i class="fa-solid fa-clock-rotate-left"></i> Audit & Activity Logs</a>
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -67,199 +70,368 @@
             <!-- Body Containing exactly 7 sections -->
             <div class="dashboard-body">
 
-                <!-- SECTION 1: Personalized Admin Welcome Banner -->
-                <section class="dash-welcome" style="padding: 35px; margin-bottom: 30px; background: linear-gradient(135deg, var(--primary-dark), var(--primary));">
-                    <div>
-                        <h2 id="admin-welcome-title">System Administrator, Dr. Rajesh Kumar</h2>
-                        <p>Perform identity audits, approve pending passport filings, and resolve citizen grievance requests.</p>
-                    </div>
-                    <div class="dash-welcome-bg">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                </section>
+                <!-- TAB 1: Console Overview -->
+                <div class="dash-tab active" id="tab-overview" style="animation: fadeInUp 0.5s ease forwards;">
+                    <!-- SECTION 1: Personalized Admin Welcome Banner -->
+                    <section class="dash-welcome" style="padding: 35px; margin-bottom: 30px; background: linear-gradient(135deg, var(--primary-dark), var(--primary));">
+                        <div>
+                            <h2 id="admin-welcome-title">System Administrator, Dr. Rajesh Kumar</h2>
+                            <p>Perform identity audits, approve pending passport filings, and resolve citizen grievance requests.</p>
+                        </div>
+                        <div class="dash-welcome-bg">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                    </section>
 
-                <!-- SECTION 2: Analytics Widgets -->
-                <section class="analytics-widgets-section" style="padding: 0 0 30px 0;">
-                    <div class="widgets-grid" style="margin-bottom: 0;">
-                        <div class="widget-card">
-                            <div class="widget-info">
-                                <h4>Pending Audits</h4>
-                                <p>18 Files</p>
+                    <!-- SECTION 2: Analytics Widgets -->
+                    <section class="analytics-widgets-section" style="padding: 0 0 30px 0;">
+                        <div class="widgets-grid" style="margin-bottom: 0;">
+                            <div class="widget-card">
+                                <div class="widget-info">
+                                    <h4>Pending Audits</h4>
+                                    <p>18 Files</p>
+                                </div>
+                                <div class="widget-icon"><i class="fa-solid fa-file-signature"></i></div>
                             </div>
-                            <div class="widget-icon"><i class="fa-solid fa-file-signature"></i></div>
-                        </div>
-                        <div class="widget-card">
-                            <div class="widget-info">
-                                <h4>Open Grievances</h4>
-                                <p>4 Tickets</p>
+                            <div class="widget-card">
+                                <div class="widget-info">
+                                    <h4>Open Grievances</h4>
+                                    <p>4 Tickets</p>
+                                </div>
+                                <div class="widget-icon" style="background: rgba(212,175,55,0.1); color: var(--accent);"><i class="fa-solid fa-ticket"></i></div>
                             </div>
-                            <div class="widget-icon" style="background: rgba(212,175,55,0.1); color: var(--accent);"><i class="fa-solid fa-ticket"></i></div>
-                        </div>
-                        <div class="widget-card">
-                            <div class="widget-info">
-                                <h4>Active Sessions</h4>
-                                <p>142 Users</p>
+                            <div class="widget-card">
+                                <div class="widget-info">
+                                    <h4>Active Sessions</h4>
+                                    <p>142 Users</p>
+                                </div>
+                                <div class="widget-icon" style="background: rgba(34,197,94,0.1); color: #22c55e;"><i class="fa-solid fa-users"></i></div>
                             </div>
-                            <div class="widget-icon" style="background: rgba(34,197,94,0.1); color: #22c55e;"><i class="fa-solid fa-users"></i></div>
-                        </div>
-                        <div class="widget-card">
-                            <div class="widget-info">
-                                <h4>Gateway Health</h4>
-                                <p>99.98%</p>
+                            <div class="widget-card">
+                                <div class="widget-info">
+                                    <h4>Gateway Health</h4>
+                                    <p>99.98%</p>
+                                </div>
+                                <div class="widget-icon" style="background: rgba(10,37,64,0.1); color: var(--primary);"><i class="fa-solid fa-server"></i></div>
                             </div>
-                            <div class="widget-icon" style="background: rgba(10,37,64,0.1); color: var(--primary);"><i class="fa-solid fa-server"></i></div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- SECTION 3: Approvals Queue Table -->
-                <section class="approvals-queue-section" style="padding: 0 0 30px 0;">
-                    <div class="table-card" style="margin-bottom: 0;">
-                        <div class="table-card-header">
-                            <h4>Pending Document Verification Queue</h4>
-                            <span class="badge badge-warning">Needs Review</span>
-                        </div>
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Application ID</th>
-                                        <th>Citizen Name</th>
-                                        <th>Service Category</th>
-                                        <th>Days Pending</th>
-                                        <th>Current Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#APP-PASS-9041</td>
-                                        <td>Sarah Johnson</td>
-                                        <td>Passport Reissue Booklet</td>
-                                        <td>1 Day</td>
-                                        <td><span class="badge badge-warning">Pending Review</span></td>
-                                        <td><button class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="approveApplication(this, '#APP-PASS-9041')">Verify & Approve</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#APP-TAX-7721</td>
-                                        <td>Marcus Sterling</td>
-                                        <td>Commercial Land Assessment Audit</td>
-                                        <td>3 Days</td>
-                                        <td><span class="badge badge-warning">Pending Review</span></td>
-                                        <td><button class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="approveApplication(this, '#APP-TAX-7721')">Verify & Approve</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 4: Grievance Resolution Inbox -->
-                <section class="grievance-resolution-section" style="padding: 0 0 30px 0;">
-                    <div class="table-card" style="margin-bottom: 0;">
-                        <div class="table-card-header">
-                            <h4>Active Citizen Grievance Inbox</h4>
-                            <span class="badge badge-danger">High SLA Priority</span>
-                        </div>
-                        <div class="notifications-list">
-                            <div class="notification-item alert-priority">
-                                <div class="notification-icon"><i class="fa-solid fa-circle-exclamation" style="color: var(--accent);"></i></div>
-                                <div class="notification-content" style="flex: 1;">
-                                    <h5>Grievance #GRV-102941: RTO License Delay</h5>
-                                    <p><strong>Citizen:</strong> John Doe | <strong>Description:</strong> "Filing slot was cleared on June 20, but digital credential has not populated digital locker yet."</p>
-                                    <div class="notification-time">Submitted: 3 Hours Ago | SLA Deadline: 24 Hours</div>
-                                    <button class="btn btn-accent btn-glow ripple-effect" style="padding: 6px 15px; font-size: 0.8rem; margin-top: 10px;" onclick="resolveGrievance(this, '#GRV-102941')">Mark Resolved</button>
+                    <!-- SECTION 2.5: Live System Monitor -->
+                    <section style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <div class="table-card" style="flex: 2; margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>Live System Traffic Map</h4>
+                                </div>
+                                <div style="height: 250px; background: rgba(10,37,64,0.02); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px dashed rgba(0,0,0,0.1);">
+                                    <!-- Placeholder for Map / Chart -->
+                                    <div style="text-align: center; color: var(--text-muted);">
+                                        <i class="fa-solid fa-earth-americas" style="font-size: 4rem; opacity: 0.2; margin-bottom: 15px;"></i>
+                                        <p>Geospatial traffic visualization loads here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-card" style="flex: 1; margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>System Alerts</h4>
+                                </div>
+                                <div class="notifications-list">
+                                    <div class="notification-item" style="border-left-color: var(--accent);">
+                                        <div class="notification-icon"><i class="fa-solid fa-bolt" style="color: var(--accent);"></i></div>
+                                        <div class="notification-content">
+                                            <h5 style="margin-bottom: 3px;">Payment Gateway High Latency</h5>
+                                            <p style="font-size: 0.8rem;">API response > 2s</p>
+                                            <div class="notification-time">10 mins ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item">
+                                        <div class="notification-icon"><i class="fa-solid fa-check" style="color: #22c55e;"></i></div>
+                                        <div class="notification-content">
+                                            <h5 style="margin-bottom: 3px;">Database Sync Completed</h5>
+                                            <p style="font-size: 0.8rem;">Central Node verified</p>
+                                            <div class="notification-time">1 hr ago</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- SECTION 5: Registered Citizen list manager -->
-                <section class="accounts-manager-section" style="padding: 0 0 30px 0;">
-                    <div class="table-card" style="margin-bottom: 0;">
-                        <div class="table-card-header">
-                            <h4>Citizen User Registries</h4>
-                            <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.8rem;" onclick="alert('Exporting Citizen Records CSV...');"><i class="fa-solid fa-file-export"></i> Export CSV</button>
+                    <!-- SECTION 4: Administrative Quick Actions -->
+                    <section class="admin-shortcuts-section" style="padding: 0 0 30px 0;">
+                        <div class="table-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h4><i class="fa-solid fa-bolt" style="color: var(--accent); margin-right: 8px;"></i> Administrative Quick Actions</h4>
+                            </div>
+                            <div style="padding: 20px 25px; display: flex; gap: 15px; flex-wrap: wrap;">
+                                <button class="btn btn-primary btn-glow ripple-effect" style="flex: 1; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px;" onclick="alert('Opening User Provisioning Tool...');">
+                                    <i class="fa-solid fa-user-plus" style="font-size: 1.5rem;"></i>
+                                    <span style="font-size: 0.9rem; font-weight: 600;">Provision New User</span>
+                                </button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; border: 2px solid var(--accent); color: var(--accent);" onclick="alert('Opening Emergency Broadcast Terminal...');">
+                                    <i class="fa-solid fa-tower-broadcast" style="font-size: 1.5rem;"></i>
+                                    <span style="font-size: 0.9rem; font-weight: 600;">Emergency Broadcast</span>
+                                </button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; border: 2px solid var(--primary); color: var(--primary);" onclick="alert('Generating Real-time System Load Report...');">
+                                    <i class="fa-solid fa-chart-line" style="font-size: 1.5rem;"></i>
+                                    <span style="font-size: 0.9rem; font-weight: 600;">Generate Load Report</span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>National ID</th>
-                                        <th>Citizen Name</th>
-                                        <th>Registered Email</th>
-                                        <th>Locker Files Issued</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>ID-399281-ND</td>
-                                        <td>Sarah Johnson</td>
-                                        <td>citizen@gmail.com</td>
-                                        <td>2 Certificates</td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>ID-110293-ND</td>
-                                        <td>Marcus Sterling</td>
-                                        <td>marcus.s@outlook.com</td>
-                                        <td>5 Certificates</td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>ID-882941-ND</td>
-                                        <td>Carlos Mendez</td>
-                                        <td>carlos.m@gmail.com</td>
-                                        <td>1 Certificate</td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
 
-                <!-- SECTION 6: Announcement / Press Release Publisher -->
-                <section class="announcements-publisher-section" style="padding: 0 0 30px 0;">
-                    <div class="form-card">
-                        <h3>Publish Portal Announcement & Emergency Alert</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">This alert publishes directly to the visitor homepage notice boards instantly.</p>
-                        <form onsubmit="event.preventDefault(); alert('Press Bulletin Published Live!');">
-                            <div class="form-group">
-                                <label>Announcement Category</label>
-                                <select class="form-control">
-                                    <option>Emergency Alert (Disaster / Storm)</option>
-                                    <option>Administrative Policy Bulletin</option>
-                                    <option>Road Closure / Construction detour</option>
-                                </select>
+                <!-- TAB 2: Approvals & Grievances -->
+                <div class="dash-tab" id="tab-approvals" style="display: none;">
+                    <!-- SECTION 3: Approvals Queue Table -->
+                    <section class="approvals-queue-section" style="padding: 0 0 30px 0;">
+                        <div class="table-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h4>Pending Document Verification Queue</h4>
+                                <span class="badge badge-warning">Needs Review</span>
                             </div>
-                            <div class="form-group">
-                                <label>Bulletin Title</label>
-                                <input type="text" class="form-control" required placeholder="E.g. High Storm Warning in Northern District">
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Application ID</th>
+                                            <th>Citizen Name</th>
+                                            <th>Service Category</th>
+                                            <th>Days Pending</th>
+                                            <th>Current Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#APP-PASS-9041</td>
+                                            <td>Sarah Johnson</td>
+                                            <td>Passport Reissue Booklet</td>
+                                            <td>1 Day</td>
+                                            <td><span class="badge badge-warning">Pending Review</span></td>
+                                            <td><button class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="approveApplication(this, '#APP-PASS-9041')">Verify & Approve</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#APP-TAX-7721</td>
+                                            <td>Marcus Sterling</td>
+                                            <td>Commercial Land Assessment Audit</td>
+                                            <td>3 Days</td>
+                                            <td><span class="badge badge-warning">Pending Review</span></td>
+                                            <td><button class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="approveApplication(this, '#APP-TAX-7721')">Verify & Approve</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="form-group">
-                                <label>Detailed content</label>
-                                <textarea class="form-control" rows="3" placeholder="Explain the alert parameters..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-accent btn-glow ripple-effect">Publish Announcement</button>
-                        </form>
-                    </div>
-                </section>
-
-                <!-- SECTION 7: System Settings & Database status Controls -->
-                <section class="sys-settings-section" style="padding: 0 0 30px 0;">
-                    <div class="form-card">
-                        <h3>System Configuration & Audit Logs</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Manage database configuration setups or trigger directory backups.</p>
-                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                            <button class="btn btn-primary btn-glow ripple-effect" onclick="alert('Triggering full system audit logging. Audit reports saved to /logs.');"><i class="fa-solid fa-shield-halved"></i> Run Security Audit</button>
-                            <button class="btn btn-secondary" onclick="alert('Database backup initiated. Snapshot saved securely to backup server.');" style="border: 2px solid var(--primary); color: var(--primary);"><i class="fa-solid fa-database"></i> Trigger Backup</button>
-                            <button class="btn btn-accent btn-glow ripple-effect" onclick="alert('System cache cleared.');"><i class="fa-solid fa-trash-can"></i> Clear Portal Cache</button>
                         </div>
-                    </div>
-                </section>
+                    </section>
+
+                    <!-- SECTION 4: Grievance Resolution Inbox -->
+                    <section class="grievance-resolution-section" style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <div class="table-card" style="flex: 2; margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>Active Citizen Grievance Inbox</h4>
+                                    <span class="badge badge-danger">High SLA Priority</span>
+                                </div>
+                                <div class="notifications-list">
+                                    <div class="notification-item alert-priority">
+                                        <div class="notification-icon"><i class="fa-solid fa-circle-exclamation" style="color: var(--accent);"></i></div>
+                                        <div class="notification-content" style="flex: 1;">
+                                            <h5>Grievance #GRV-102941: RTO License Delay</h5>
+                                            <p><strong>Citizen:</strong> John Doe | <strong>Description:</strong> "Filing slot was cleared on June 20, but digital credential has not populated digital locker yet."</p>
+                                            <div class="notification-time">Submitted: 3 Hours Ago | SLA Deadline: 24 Hours</div>
+                                            <button class="btn btn-accent btn-glow ripple-effect" style="padding: 6px 15px; font-size: 0.8rem; margin-top: 10px;" onclick="resolveGrievance(this, '#GRV-102941')">Mark Resolved</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLA Performance Panel -->
+                            <div class="widget-card" style="flex: 1; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2);">
+                                <h4 style="font-size: 1.1rem; color: var(--text-dark);">SLA Compliance Rate</h4>
+                                <div style="font-size: 3rem; font-weight: 700; color: #22c55e; margin: 10px 0;">96.4%</div>
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">+2.1% from last month. Keep it up!</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- TAB 3: User Management -->
+                <div class="dash-tab" id="tab-users" style="display: none;">
+                    <!-- SECTION 5: Registered Citizen list manager -->
+                    <section class="accounts-manager-section" style="padding: 0 0 30px 0;">
+                        <div class="table-card" style="margin-bottom: 0;">
+                            <div class="table-card-header">
+                                <h4>Citizen User Registries</h4>
+                                <button class="btn btn-secondary" style="padding: 5px 12px; font-size: 0.8rem;" onclick="alert('Exporting Citizen Records CSV...');"><i class="fa-solid fa-file-export"></i> Export CSV</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>National ID</th>
+                                            <th>Citizen Name</th>
+                                            <th>Registered Email</th>
+                                            <th>Locker Files Issued</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ID-399281-ND</td>
+                                            <td>Sarah Johnson</td>
+                                            <td>citizen@gmail.com</td>
+                                            <td>2 Certificates</td>
+                                            <td><span class="badge badge-success">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ID-110293-ND</td>
+                                            <td>Marcus Sterling</td>
+                                            <td>marcus.s@outlook.com</td>
+                                            <td>5 Certificates</td>
+                                            <td><span class="badge badge-success">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>ID-882941-ND</td>
+                                            <td>Carlos Mendez</td>
+                                            <td>carlos.m@gmail.com</td>
+                                            <td>1 Certificate</td>
+                                            <td><span class="badge badge-success">Active</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- TAB 4: System & Publisher -->
+                <div class="dash-tab" id="tab-system" style="display: none;">
+                    <!-- SECTION 6: Announcement / Press Release Publisher -->
+                    <section class="announcements-publisher-section" style="padding: 0 0 30px 0;">
+                        <div class="form-card">
+                            <h3>Publish Portal Announcement & Emergency Alert</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">This alert publishes directly to the visitor homepage notice boards instantly.</p>
+                            <form onsubmit="event.preventDefault(); alert('Press Bulletin Published Live!');">
+                                <div class="form-group">
+                                    <label>Announcement Category</label>
+                                    <select class="form-control">
+                                        <option>Emergency Alert (Disaster / Storm)</option>
+                                        <option>Administrative Policy Bulletin</option>
+                                        <option>Road Closure / Construction detour</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bulletin Title</label>
+                                    <input type="text" class="form-control" required placeholder="E.g. High Storm Warning in Northern District">
+                                </div>
+                                <div class="form-group">
+                                    <label>Detailed content</label>
+                                    <textarea class="form-control" rows="3" placeholder="Explain the alert parameters..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-accent btn-glow ripple-effect">Publish Announcement</button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 7: System Settings & Database status Controls -->
+                    <section class="sys-settings-section" style="padding: 0 0 30px 0;">
+                        <div class="form-card">
+                            <h3>System Configuration & Audit Logs</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Manage database configuration setups or trigger directory backups.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <button class="btn btn-primary btn-glow ripple-effect" onclick="alert('Triggering full system audit logging. Audit reports saved to /logs.');"><i class="fa-solid fa-shield-halved"></i> Run Security Audit</button>
+                                <button class="btn btn-secondary" onclick="alert('Database backup initiated. Snapshot saved securely to backup server.');" style="border: 2px solid var(--primary); color: var(--primary);"><i class="fa-solid fa-database"></i> Trigger Backup</button>
+                                <button class="btn btn-accent btn-glow ripple-effect" onclick="alert('System cache cleared.');"><i class="fa-solid fa-trash-can"></i> Clear Portal Cache</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- TAB 5: Audit & Activity Logs -->
+                <div class="dash-tab" id="tab-audit" style="display: none;">
+                    <!-- SECTION 8: Recent Activity Logs -->
+                    <section class="activity-logs-section" style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <!-- Logs Table -->
+                            <div class="table-card" style="flex: 3; margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>System Activity & Security Audit Logs</h4>
+                                    <span class="badge badge-info">Live Tracking</span>
+                                </div>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Timestamp</th>
+                                                <th>Action Performed</th>
+                                                <th>Administrator</th>
+                                                <th>IP Address</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>July 01, 2026 - 09:12 AM</td>
+                                                <td>Approved Application #APP-LIC-8812</td>
+                                                <td>Dr. Rajesh Kumar</td>
+                                                <td>192.168.1.104</td>
+                                                <td><span class="badge badge-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>July 01, 2026 - 08:45 AM</td>
+                                                <td>Database Snapshot Backup Triggered</td>
+                                                <td>System Auto</td>
+                                                <td>127.0.0.1</td>
+                                                <td><span class="badge badge-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>July 01, 2026 - 07:30 AM</td>
+                                                <td>Failed Login Attempt (Admin Console)</td>
+                                                <td>Unknown</td>
+                                                <td>203.0.113.42</td>
+                                                <td><span class="badge badge-danger">Blocked</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>June 30, 2026 - 16:20 PM</td>
+                                                <td>Published: "Capital Expressway Maintenance"</td>
+                                                <td>Dr. Rajesh Kumar</td>
+                                                <td>192.168.1.104</td>
+                                                <td><span class="badge badge-success">Success</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Reporting Widget -->
+                            <div class="form-card" style="flex: 1; margin-bottom: 0;">
+                                <h3>Export Audit Report</h3>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Generate compliance reports for internal security reviews.</p>
+                                <form onsubmit="event.preventDefault(); alert('Generating PDF Report...');">
+                                    <div class="form-group" style="margin-bottom: 15px;">
+                                        <label>Report Format</label>
+                                        <select class="form-control" style="padding: 8px;">
+                                            <option>PDF Document</option>
+                                            <option>CSV Spreadsheet</option>
+                                            <option>JSON Dump</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 15px;">
+                                        <label>Date Range</label>
+                                        <select class="form-control" style="padding: 8px;">
+                                            <option>Last 24 Hours</option>
+                                            <option>Last 7 Days</option>
+                                            <option>Last 30 Days</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%;"><i class="fa-solid fa-download"></i> Download Report</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
 
             </div>
         </main>

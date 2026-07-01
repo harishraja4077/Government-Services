@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,16 +31,19 @@
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link active"><i class="fa-solid fa-gauge"></i> Overview</a>
+                    <a href="#" class="sidebar-link active" onclick="switchDashTab(event, 'tab-overview')"><i class="fa-solid fa-gauge"></i> Overview</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="services.html" class="sidebar-link"><i class="fa-solid fa-list-check"></i> Apply Services</a>
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-applications')"><i class="fa-solid fa-file-contract"></i> Applications & Locker</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="project.html" class="sidebar-link"><i class="fa-solid fa-road"></i> City Projects</a>
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-transactions')"><i class="fa-solid fa-receipt"></i> Transactions & Inbox</a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-envelope-open-text"></i> Support Desk</a>
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-settings')"><i class="fa-solid fa-user-gear"></i> Profile Settings</a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" onclick="switchDashTab(event, 'tab-support')"><i class="fa-solid fa-headset"></i> Help & Support</a>
                 </li>
             </ul>
             <div class="sidebar-footer">
@@ -67,245 +70,429 @@
             <!-- Body Containing exactly 7 sections -->
             <div class="dashboard-body">
 
-                <!-- SECTION 1: Personalized Citizen Welcome Banner -->
-                <section class="dash-welcome" style="padding: 35px; margin-bottom: 30px;">
-                    <div>
-                        <h2 id="user-welcome-title">Welcome Back, Sarah Johnson</h2>
-                        <p>Manage your official filings, download signed certificates from your locker, or pay tax dues securely online.</p>
-                    </div>
-                    <div class="dash-welcome-bg">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-                </section>
+                <!-- TAB 1: Overview -->
+                <div class="dash-tab active" id="tab-overview" style="animation: fadeInUp 0.5s ease forwards;">
+                    <!-- SECTION 1: Personalized Citizen Welcome Banner -->
+                    <section class="dash-welcome" style="padding: 35px; margin-bottom: 30px;">
+                        <div>
+                            <h2 id="user-welcome-title">Welcome Back, Sarah Johnson</h2>
+                            <p>Manage your official filings, download signed certificates from your locker, or pay tax dues securely online.</p>
+                        </div>
+                        <div class="dash-welcome-bg">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                    </section>
 
-                <!-- SECTION 2: Quick Action Hub Buttons -->
-                <section class="quick-actions-section" style="padding: 0 0 30px 0;">
-                    <div class="widgets-grid" style="margin-bottom: 0;">
-                        <a href="services.html" class="widget-card" style="cursor: pointer; text-decoration: none;">
-                            <div class="widget-info">
-                                <h4>New Application</h4>
-                                <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">Apply for Certificate</p>
+                    <!-- SECTION 2: Quick Action Hub Buttons -->
+                    <section class="quick-actions-section" style="padding: 0 0 30px 0;">
+                        <div class="widgets-grid" style="margin-bottom: 0;">
+                            <a href="services.html" class="widget-card" style="cursor: pointer; text-decoration: none;">
+                                <div class="widget-info">
+                                    <h4>New Application</h4>
+                                    <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">Apply for Certificate</p>
+                                </div>
+                                <div class="widget-icon"><i class="fa-solid fa-file-circle-plus"></i></div>
+                            </a>
+                            <a href="#" class="widget-card" onclick="event.preventDefault(); alert('Redirecting to Payment Gateway...');">
+                                <div class="widget-info">
+                                    <h4>Municipal Fees</h4>
+                                    <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">Pay Taxes / Bills</p>
+                                </div>
+                                <div class="widget-icon" style="background: rgba(212,175,55,0.1); color: var(--accent);"><i class="fa-solid fa-credit-card"></i></div>
+                            </a>
+                            <a href="contact.html" class="widget-card">
+                                <div class="widget-info">
+                                    <h4>Support Center</h4>
+                                    <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">File Grievance Ticket</p>
+                                </div>
+                                <div class="widget-icon" style="background: rgba(10,37,64,0.1); color: var(--primary);"><i class="fa-solid fa-circle-question"></i></div>
+                            </a>
+                            <a href="project.html" class="widget-card">
+                                <div class="widget-info">
+                                    <h4>Local Oversight</h4>
+                                    <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">Report Pothole/Faults</p>
+                                </div>
+                                <div class="widget-icon" style="background: rgba(239,68,68,0.1); color:#ef4444;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 2.5: News & Profile Status -->
+                    <section style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <div class="table-card" style="flex: 2; margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>Government News & Policy Updates</h4>
+                                </div>
+                                <div class="notifications-list">
+                                    <div class="notification-item">
+                                        <div class="notification-icon"><i class="fa-solid fa-bullhorn" style="color: var(--primary);"></i></div>
+                                        <div class="notification-content">
+                                            <h5>New Digital ID Card Rollout Program</h5>
+                                            <p>Citizens can now seamlessly link their voter IDs to their primary digital locker for instant verification during upcoming municipal elections.</p>
+                                            <div class="notification-time">Today, 08:30 AM</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="widget-icon"><i class="fa-solid fa-file-circle-plus"></i></div>
-                        </a>
-                        <a href="#" class="widget-card" onclick="event.preventDefault(); alert('Redirecting to Payment Gateway...');">
-                            <div class="widget-info">
-                                <h4>Municipal Fees</h4>
-                                <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">Pay Taxes / Bills</p>
+                            <div class="widget-card" style="flex: 1; margin-bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px;">
+                                <h4 style="font-size: 1.2rem; color: var(--text-dark);">Profile Completion</h4>
+                                <div style="font-size: 2.8rem; font-weight: 700; color: var(--primary); margin: 15px 0;">85%</div>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Link your property tax records to reach 100%.</p>
+                                <button class="btn btn-primary btn-glow ripple-effect" style="padding: 8px 20px; font-size: 0.9rem;" onclick="alert('Redirecting to Profile linking...')">Complete Profile</button>
                             </div>
-                            <div class="widget-icon" style="background: rgba(212,175,55,0.1); color: var(--accent);"><i class="fa-solid fa-credit-card"></i></div>
-                        </a>
-                        <a href="contact.html" class="widget-card">
-                            <div class="widget-info">
-                                <h4>Support Center</h4>
-                                <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">File Grievance Ticket</p>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 4: Upcoming Deadlines -->
+                    <section class="deadlines-section" style="padding: 0 0 30px 0;">
+                        <div class="table-card" style="margin-bottom: 0; background: linear-gradient(to right, #ffffff, rgba(239,68,68,0.05)); border-left: 4px solid #ef4444;">
+                            <div class="table-card-header" style="border-bottom: none; padding-bottom: 5px;">
+                                <h4><i class="fa-regular fa-calendar-xmark" style="color: #ef4444; margin-right: 8px;"></i> Upcoming Deadlines & Appointments</h4>
                             </div>
-                            <div class="widget-icon" style="background: rgba(10,37,64,0.1); color: var(--primary);"><i class="fa-solid fa-circle-question"></i></div>
-                        </a>
-                        <a href="project.html" class="widget-card">
-                            <div class="widget-info">
-                                <h4>Local Oversight</h4>
-                                <p style="font-size: 1.1rem; font-weight:600; color:var(--primary); margin-top:5px;">Report Pothole/Faults</p>
+                            <div style="padding: 0 25px 25px 25px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed rgba(0,0,0,0.1);">
+                                    <div>
+                                        <h5 style="margin-bottom: 4px; color: var(--text-dark);">Municipal Property Tax Q3</h5>
+                                        <p style="font-size: 0.85rem; color: var(--text-muted);">Amount Due: $150.00</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: #ef4444; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px;">Due in 5 Days</div>
+                                        <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;">Pay Now</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0;">
+                                    <div>
+                                        <h5 style="margin-bottom: 4px; color: var(--text-dark);">Passport Verification Visit</h5>
+                                        <p style="font-size: 0.85rem; color: var(--text-muted);">Capitol Suite 404</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 4px;">July 03, 10:00 AM</div>
+                                        <a href="#" style="font-size: 0.75rem; color: var(--primary);">Reschedule</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="widget-icon" style="background: rgba(239,68,68,0.1); color:#ef4444;"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                        </a>
-                    </div>
-                </section>
+                        </div>
+                    </section>
+                </div>
 
-                <!-- SECTION 3: Active Application status tracker -->
-                <section class="application-tracker-section" style="padding: 0 0 30px 0;">
-                    <div class="table-card" style="margin-bottom: 0;">
-                        <div class="table-card-header">
-                            <h4>Active Applications Tracker</h4>
-                            <span class="badge badge-info">2 Active Filings</span>
+                <!-- TAB 2: Applications & Locker -->
+                <div class="dash-tab" id="tab-applications" style="display: none;">
+                    <!-- SECTION 3: Active Application status tracker -->
+                    <section class="application-tracker-section" style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <div class="table-card" style="flex: 2; margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>Active Applications Tracker</h4>
+                                    <span class="badge badge-info">2 Active Filings</span>
+                                </div>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Application ID</th>
+                                                <th>Service Title</th>
+                                                <th>Filing Date</th>
+                                                <th>Current Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>#APP-PASS-9041</td>
+                                                <td>Passport Reissue Booklet</td>
+                                                <td>June 28, 2026</td>
+                                                <td><span class="badge badge-warning">In Progress</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>#APP-LIC-8812</td>
+                                                <td>Commercial DL Renewal</td>
+                                                <td>June 25, 2026</td>
+                                                <td><span class="badge badge-success">Approved</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- New Recommended Services Panel -->
+                            <div class="table-card" style="flex: 1; margin-bottom: 0; background: var(--light-bg);">
+                                <div class="table-card-header">
+                                    <h4>Recommended For You</h4>
+                                </div>
+                                <div class="notifications-list">
+                                    <a href="services.html" class="notification-item" style="text-decoration: none; color: inherit; cursor: pointer; border-left-color: var(--primary);">
+                                        <div class="notification-icon" style="font-size: 1.2rem;"><i class="fa-solid fa-house-chimney-medical" style="color: var(--primary);"></i></div>
+                                        <div class="notification-content">
+                                            <h5 style="margin-bottom: 4px;">Health ID Registration</h5>
+                                            <p style="font-size: 0.8rem;">Apply for universal health coverage.</p>
+                                        </div>
+                                    </a>
+                                    <a href="services.html" class="notification-item" style="text-decoration: none; color: inherit; cursor: pointer; border-left-color: var(--accent);">
+                                        <div class="notification-icon" style="font-size: 1.2rem;"><i class="fa-solid fa-leaf" style="color: var(--accent);"></i></div>
+                                        <div class="notification-content">
+                                            <h5 style="margin-bottom: 4px;">Solar Subsidy Request</h5>
+                                            <p style="font-size: 0.8rem;">Claim renewable energy rebates.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Application ID</th>
-                                        <th>Service Title</th>
-                                        <th>Filing Date</th>
-                                        <th>Target SLA Review</th>
-                                        <th>Current Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#APP-PASS-9041</td>
-                                        <td>Passport Reissue Booklet</td>
-                                        <td>June 28, 2026</td>
-                                        <td>July 08, 2026</td>
-                                        <td><span class="badge badge-warning">In Progress</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#APP-LIC-8812</td>
-                                        <td>Commercial Driver License Renewal</td>
-                                        <td>June 25, 2026</td>
-                                        <td>July 02, 2026</td>
-                                        <td><span class="badge badge-success">Approved</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
+                    </section>
 
-                <!-- SECTION 4: Digital Locker Table -->
-                <section class="locker-section" style="padding: 0 0 30px 0;">
-                    <div class="table-card" style="margin-bottom: 0;">
-                        <div class="table-card-header">
-                            <h4>Digital Locker Issued Certificates</h4>
-                            <span class="badge badge-success">Verified Lockers</span>
-                        </div>
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Certificate ID</th>
-                                        <th>Certificate Title</th>
-                                        <th>Signing Department</th>
-                                        <th>Valid Till</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#CERT-BIRTH-2041</td>
-                                        <td>Certified Birth Certificate (Duplicate)</td>
-                                        <td>Ministry of Health</td>
-                                        <td>Lifetime Valid</td>
-                                        <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Birth Certificate PDF...');"><i class="fa-solid fa-download"></i> Download</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>#CERT-RTO-9941</td>
-                                        <td>Digital Smart Driving License</td>
-                                        <td>Transport Department</td>
-                                        <td>May 12, 2036</td>
-                                        <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Smart DL PDF...');"><i class="fa-solid fa-download"></i> Download</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 5: Recent Transactions ledger -->
-                <section class="transactions-section" style="padding: 0 0 30px 0;">
-                    <div class="table-card" style="margin-bottom: 0;">
-                        <div class="table-card-header">
-                            <h4>Recent Portal Payments</h4>
-                            <span class="badge badge-info">3 Cleared</span>
-                        </div>
-                        <div class="table-responsive">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Receipt ID</th>
-                                        <th>Filing Description</th>
-                                        <th>Payment Date</th>
-                                        <th>Total Paid</th>
-                                        <th>Method</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#REC-884102</td>
-                                        <td>Annual Residential Property Valuation Tax</td>
-                                        <td>May 24, 2026</td>
-                                        <td>$150.00</td>
-                                        <td>Credit Card ending in 4102</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#REC-882291</td>
-                                        <td>Passport Application Fee</td>
-                                        <td>June 28, 2026</td>
-                                        <td>$85.00</td>
-                                        <td>UPI NetBanking Portal</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#REC-881140</td>
-                                        <td>Driver License Road Test Slot Booking</td>
-                                        <td>June 25, 2026</td>
-                                        <td>$35.00</td>
-                                        <td>Debit Card ending in 9928</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- SECTION 6: Department Messages & Alerts -->
-                <section class="inbox-section" style="padding: 0 0 30px 0;">
-                    <div class="dash-columns">
+                    <!-- SECTION 4: Digital Locker Table -->
+                    <section class="locker-section" style="padding: 0 0 30px 0;">
                         <div class="table-card" style="margin-bottom: 0;">
                             <div class="table-card-header">
-                                <h4>Department Notification Desk</h4>
-                                <span class="badge badge-info">New Notifications</span>
+                                <h4>Digital Locker Issued Certificates</h4>
+                                <span class="badge badge-success">Verified Lockers</span>
                             </div>
-                            <div class="notifications-list">
-                                <div class="notification-item">
-                                    <div class="notification-icon"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i></div>
-                                    <div class="notification-content">
-                                        <h5>License Renewal Approved</h5>
-                                        <p>Your RTO Driver license renewal application (#APP-LIC-8812) has been approved. The digital copy is now signed and loaded into your locker.</p>
-                                        <div class="notification-time">June 29, 2026 | Dept of Transport</div>
-                                    </div>
-                                </div>
-                                <div class="notification-item alert-priority">
-                                    <div class="notification-icon"><i class="fa-solid fa-passport"></i></div>
-                                    <div class="notification-content">
-                                        <h5>Passport Verification Slot Scheduled</h5>
-                                        <p>Your passport verification appointment is scheduled for July 03 at 10:00 AM. Please carry all original certificates and address slips to Capitol Suite 404.</p>
-                                        <div class="notification-time">June 28, 2026 | External Affairs</div>
-                                    </div>
-                                </div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Certificate ID</th>
+                                            <th>Certificate Title</th>
+                                            <th>Signing Department</th>
+                                            <th>Valid Till</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#CERT-BIRTH-2041</td>
+                                            <td>Certified Birth Certificate (Duplicate)</td>
+                                            <td>Ministry of Health</td>
+                                            <td>Lifetime Valid</td>
+                                            <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Birth Certificate PDF...');"><i class="fa-solid fa-download"></i> Download</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#CERT-RTO-9941</td>
+                                            <td>Digital Smart Driving License</td>
+                                            <td>Transport Department</td>
+                                            <td>May 12, 2036</td>
+                                            <td><a href="#" class="btn btn-primary btn-glow ripple-effect" style="padding: 5px 12px; font-size: 0.8rem;" onclick="event.preventDefault(); alert('Downloading Smart DL PDF...');"><i class="fa-solid fa-download"></i> Download</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        
+                    </section>
+                </div>
+
+                <!-- TAB 3: Transactions & Inbox -->
+                <div class="dash-tab" id="tab-transactions" style="display: none;">
+                    <!-- SECTION 5: Recent Transactions ledger -->
+                    <section class="transactions-section" style="padding: 0 0 30px 0;">
                         <div class="table-card" style="margin-bottom: 0;">
                             <div class="table-card-header">
-                                <h4>Public Security Bulletins</h4>
+                                <h4>Recent Portal Payments</h4>
+                                <span class="badge badge-info">3 Cleared</span>
                             </div>
-                            <div class="notifications-list">
-                                <div class="notification-item" style="border-left-color: var(--accent);">
-                                    <div class="notification-icon"><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i></div>
-                                    <div class="notification-content">
-                                        <h5>Capital Expressway Maintenance</h5>
-                                        <p>Expect minor traffic detours on Capital expressway tonight due to grid repaving.</p>
-                                        <div class="notification-time">Transit Board</div>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Receipt ID</th>
+                                            <th>Filing Description</th>
+                                            <th>Payment Date</th>
+                                            <th>Total Paid</th>
+                                            <th>Method</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#REC-884102</td>
+                                            <td>Annual Residential Property Valuation Tax</td>
+                                            <td>May 24, 2026</td>
+                                            <td>$150.00</td>
+                                            <td>Credit Card ending in 4102</td>
+                                        </tr>
+                                        <tr>
+                                            <td>#REC-882291</td>
+                                            <td>Passport Application Fee</td>
+                                            <td>June 28, 2026</td>
+                                            <td>$85.00</td>
+                                            <td>UPI NetBanking Portal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>#REC-881140</td>
+                                            <td>Driver License Road Test Slot Booking</td>
+                                            <td>June 25, 2026</td>
+                                            <td>$35.00</td>
+                                            <td>Debit Card ending in 9928</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SECTION 6: Department Messages & Alerts -->
+                    <section class="inbox-section" style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <div class="table-card" style="margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>Department Notification Desk</h4>
+                                    <span class="badge badge-info">New Notifications</span>
+                                </div>
+                                <div class="notifications-list">
+                                    <div class="notification-item">
+                                        <div class="notification-icon"><i class="fa-solid fa-circle-check" style="color: #22c55e;"></i></div>
+                                        <div class="notification-content">
+                                            <h5>License Renewal Approved</h5>
+                                            <p>Your RTO Driver license renewal application (#APP-LIC-8812) has been approved. The digital copy is now signed and loaded into your locker.</p>
+                                            <div class="notification-time">June 29, 2026 | Dept of Transport</div>
+                                        </div>
+                                    </div>
+                                    <div class="notification-item alert-priority">
+                                        <div class="notification-icon"><i class="fa-solid fa-passport"></i></div>
+                                        <div class="notification-content">
+                                            <h5>Passport Verification Slot Scheduled</h5>
+                                            <p>Your passport verification appointment is scheduled for July 03 at 10:00 AM. Please carry all original certificates and address slips to Capitol Suite 404.</p>
+                                            <div class="notification-time">June 28, 2026 | External Affairs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="table-card" style="margin-bottom: 0;">
+                                <div class="table-card-header">
+                                    <h4>Public Security Bulletins</h4>
+                                </div>
+                                <div class="notifications-list">
+                                    <div class="notification-item" style="border-left-color: var(--accent);">
+                                        <div class="notification-icon"><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent);"></i></div>
+                                        <div class="notification-content">
+                                            <h5>Capital Expressway Maintenance</h5>
+                                            <p>Expect minor traffic detours on Capital expressway tonight due to grid repaving.</p>
+                                            <div class="notification-time">Transit Board</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
 
-                <!-- SECTION 7: Profile Management & Alert Preferences Settings -->
-                <section class="settings-section" style="padding: 0 0 30px 0;">
-                    <div class="form-card">
-                        <h3>Profile & Alerts Settings</h3>
-                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Update contact email records or adjust notification frequencies.</p>
-                        <form onsubmit="event.preventDefault(); alert('Settings updated successfully!');">
-                            <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
-                                <div class="form-group" style="flex: 1;">
-                                    <label>Mobile Number for OTPs</label>
-                                    <input type="text" class="form-control" value="+91 99881-22910">
+                <!-- TAB 4: Profile Settings -->
+                <div class="dash-tab" id="tab-settings" style="display: none;">
+                    <!-- SECTION 7: Profile Management & Alert Preferences Settings -->
+                    <section class="settings-section" style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <div class="form-card" style="flex: 2; margin-bottom: 0;">
+                                <h3>Profile & Alerts Settings</h3>
+                                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Update contact email records or adjust notification frequencies.</p>
+                                <form onsubmit="event.preventDefault(); alert('Settings updated successfully!');">
+                                    <div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px;">
+                                        <div class="form-group" style="flex: 1;">
+                                            <label>Mobile Number for OTPs</label>
+                                            <input type="text" class="form-control" value="+91 99881-22910">
+                                        </div>
+                                        <div class="form-group" style="flex: 1;">
+                                            <label>Preferred Communication</label>
+                                            <select class="form-control">
+                                                <option>Email & SMS Alerts (Recommended)</option>
+                                                <option>Email Alerts Only</option>
+                                                <option>SMS Alerts Only</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-glow ripple-effect">Update Profile Settings</button>
+                                </form>
+                            </div>
+                            
+                            <div class="form-card" style="flex: 1; margin-bottom: 0; background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2);">
+                                <h3>Security Controls</h3>
+                                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Enhance your account security with biometric or 2FA verification.</p>
+                                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                                    <div style="font-weight: 600; font-size: 0.95rem;">Two-Factor Auth (2FA)</div>
+                                    <div class="badge badge-success">Enabled</div>
                                 </div>
-                                <div class="form-group" style="flex: 1;">
-                                    <label>Preferred Communication</label>
-                                    <select class="form-control">
-                                        <option>Email & SMS Alerts (Recommended)</option>
-                                        <option>Email Alerts Only</option>
-                                        <option>SMS Alerts Only</option>
-                                    </select>
+                                <div style="display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="font-weight: 600; font-size: 0.95rem;">Biometric Login</div>
+                                    <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;">Enable</button>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-glow ripple-effect">Update Profile Settings</button>
-                        </form>
-                    </div>
-                </section>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- TAB 5: Help & Support -->
+                <div class="dash-tab" id="tab-support" style="display: none;">
+                    <!-- SECTION 8: Support Tickets -->
+                    <section class="support-section" style="padding: 0 0 30px 0;">
+                        <div class="dash-columns">
+                            <!-- New Ticket Form -->
+                            <div class="form-card" style="flex: 1; margin-bottom: 0;">
+                                <h3>File a Grievance or Ticket</h3>
+                                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Experiencing an issue? Submit a request to our support team.</p>
+                                <form onsubmit="event.preventDefault(); alert('Ticket submitted successfully! We will contact you within 24 hours.');">
+                                    <div class="form-group">
+                                        <label>Department</label>
+                                        <select class="form-control" required>
+                                            <option value="">Select Department</option>
+                                            <option>Transport & RTO</option>
+                                            <option>Revenue & Taxes</option>
+                                            <option>Municipal Services</option>
+                                            <option>Other Queries</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description of Issue</label>
+                                        <textarea class="form-control" rows="4" placeholder="Please describe the issue in detail..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-accent btn-glow ripple-effect">Submit Ticket</button>
+                                </form>
+                            </div>
+                            
+                            <!-- Right Column: Past Tickets & FAQs -->
+                            <div style="flex: 1; display: flex; flex-direction: column; gap: 30px;">
+                                <!-- Past Tickets Table -->
+                                <div class="table-card" style="margin-bottom: 0;">
+                                    <div class="table-card-header">
+                                        <h4>Your Previous Tickets</h4>
+                                        <span class="badge badge-info">1 Open Ticket</span>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Ticket ID</th>
+                                                    <th>Subject</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>#TKT-9921</td>
+                                                    <td>Property Tax Payment Failed</td>
+                                                    <td><span class="badge badge-warning">In Progress</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>#TKT-8834</td>
+                                                    <td>Digital Certificate Error</td>
+                                                    <td><span class="badge badge-success">Resolved</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <!-- Knowledge Base Links -->
+                                <div class="table-card" style="margin-bottom: 0;">
+                                    <div class="table-card-header">
+                                        <h4>Popular FAQs</h4>
+                                    </div>
+                                    <div style="padding: 0 25px 25px 25px; display: flex; flex-direction: column; gap: 10px;">
+                                        <a href="#" style="text-decoration: none; color: var(--text-dark); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 10px;"><span style="font-size: 0.95rem;"><i class="fa-solid fa-file-pdf" style="color: var(--primary); margin-right: 10px;"></i> How to print digital locker items?</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--text-muted);"></i></a>
+                                        <a href="#" style="text-decoration: none; color: var(--text-dark); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 10px;"><span style="font-size: 0.95rem;"><i class="fa-solid fa-credit-card" style="color: var(--primary); margin-right: 10px;"></i> Failed transaction refund policy</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--text-muted);"></i></a>
+                                        <a href="#" style="text-decoration: none; color: var(--text-dark); display: flex; align-items: center; justify-content: space-between;"><span style="font-size: 0.95rem;"><i class="fa-solid fa-id-card" style="color: var(--primary); margin-right: 10px;"></i> Updating Aadhaar details online</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem; color: var(--text-muted);"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
 
             </div>
         </main>

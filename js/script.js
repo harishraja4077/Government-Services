@@ -323,4 +323,31 @@ document.addEventListener('DOMContentLoaded', () => {
         obs.observe(el);
     });
 
+    /* ── 18. DASHBOARD TABS ─────────────────────────────────── */
+    window.switchDashTab = function(e, tabId) {
+        e.preventDefault();
+        // Remove active class from all sidebar links
+        document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+        // Add active class to clicked link
+        e.currentTarget.classList.add('active');
+        
+        // Hide all tabs
+        document.querySelectorAll('.dash-tab').forEach(tab => {
+            tab.style.display = 'none';
+            tab.classList.remove('active');
+            tab.style.animation = 'none'; // reset animation
+        });
+        
+        // Show target tab
+        const targetTab = document.getElementById(tabId);
+        if (targetTab) {
+            targetTab.style.display = 'block';
+            targetTab.classList.add('active');
+            // Trigger reflow for animation
+            void targetTab.offsetWidth;
+            targetTab.style.animation = 'fadeInUp 0.5s ease forwards';
+        }
+    };
+
 });
+
