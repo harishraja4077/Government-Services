@@ -130,8 +130,8 @@ a {
 }
 
 /* --- Layout Sections & Structure --- */
-section {
-    padding: 70px 0;
+.section {
+    padding: 40px 0;
     position: relative;
     overflow: hidden;
 }
@@ -246,19 +246,27 @@ section {
     transition: var(--transition);
 }
 .main-header.scrolled {
-    padding: 10px 0;
+    padding: 6px 0;
     box-shadow: var(--shadow-md);
-    background-color: var(--bg-card);
+    background-color: rgba(255, 255, 255, 0.98);
 }
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
+    transition: var(--transition);
+}
+.main-header.scrolled .header-container {
+    padding: 8px 0;
 }
 .logo-area img {
     height: 45px;
     display: block;
+    transition: var(--transition);
+}
+.main-header.scrolled .logo-area img {
+    height: 36px;
 }
 .nav-menu {
     display: flex;
@@ -275,6 +283,11 @@ section {
     color: var(--primary);
     padding: 8px 4px;
     position: relative;
+    transition: var(--transition);
+}
+.main-header.scrolled .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 4px;
 }
 .nav-link::after {
     content: '';
@@ -298,6 +311,11 @@ section {
     font-weight: 600;
     font-size: 0.9rem;
     box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.main-header.scrolled .header-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
 }
 .header-btn:hover {
     background-color: var(--secondary);
@@ -314,8 +332,8 @@ section {
 .hero-section {
     background: linear-gradient(135deg, rgba(10, 37, 64, 0.95), rgba(5, 22, 38, 0.95)), url('../images/hero.png') no-repeat center center/cover;
     color: white;
-    padding: 160px 0 120px;
-    min-height: 80vh;
+    padding: 120px 0 80px;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -1103,94 +1121,59 @@ section {
     min-height: 90vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, rgba(10, 37, 64, 0.05) 0%, rgba(0, 212, 178, 0.05) 100%);
-    padding: 50px 0;
+    background: linear-gradient(135deg, rgba(10, 37, 64, 0.05) 0%, rgba(0, 212, 178, 0.03) 100%);
+    padding: 40px 0;
 }
 .auth-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px;
 }
-.auth-logo {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.auth-logo img {
-    height: 60px;
-}
-.auth-card {
+.auth-box {
     background: var(--bg-card);
-    padding: 40px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 22px 55px rgba(10, 37, 64, 0.18);
+    border: 1px solid rgba(10, 37, 64, 0.08);
 }
-.auth-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.auth-header h2 {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
-}
-.auth-header p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-.auth-tabs {
+.auth-left {
+    background: linear-gradient(135deg, #118d6a 0%, #00d4b2 100%);
+    color: white;
+    padding: 44px;
     display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
-}
-.auth-tab-btn {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    font-weight: 600;
-    cursor: pointer;
-    border-bottom: 2px solid var(--border-color);
-    color: var(--text-muted);
-    transition: var(--transition);
-}
-.auth-tab-btn.active {
-    color: var(--primary);
-    border-bottom-color: var(--secondary);
-}
-.auth-links {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    margin-top: 15px;
-}
-.auth-links a {
-    color: var(--secondary-dark);
-    font-weight: 600;
-}
-.social-login {
-    display: flex;
-    gap: 15px;
-    margin-top: 25px;
-}
-.social-btn {
-    flex: 1;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    background: var(--bg-card);
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: var(--transition);
+    gap: 18px;
 }
-.social-btn:hover {
-    background: var(--bg-input);
-}
-.social-btn i {
-    font-size: 1.1rem;
+.auth-left .brand img { height: 46px; }
+.auth-left h1 { font-size: 2.8rem; margin: 0; }
+.auth-left p { color: rgba(255,255,255,0.92); font-size: 1rem; max-width: 480px; }
+.auth-left .auth-hero-image img { width: 100%; border-radius: 14px; display:block; box-shadow: var(--shadow-md); }
+.auth-right { padding: 32px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%); }
+.auth-right .auth-card { width:100%; background: rgba(255,255,255,0.96); padding: 30px; border-radius: 20px; border: 1px solid rgba(10, 37, 64, 0.08); box-shadow: 0 12px 30px rgba(10, 37, 64, 0.08); }
+.auth-header { text-align:left; margin-bottom:16px; }
+.auth-header h2 { font-size:1.9rem; margin-bottom:6px; }
+.auth-header p { color:var(--text-muted); font-size:0.95rem; }
+.auth-tabs { display:flex; gap:10px; margin-bottom:18px; }
+.auth-tab-btn { flex:1; padding:10px; text-align:center; font-weight:600; cursor:pointer; border-bottom:2px solid var(--border-color); color:var(--text-muted); transition:var(--transition); }
+.auth-tab-btn.active { color:var(--primary); border-bottom-color:var(--secondary); }
+.auth-links { display:flex; justify-content:space-between; font-size:0.9rem; margin-top:12px; }
+.auth-links a { color:var(--secondary-dark); font-weight:600; }
+.social-login { display:flex; gap:15px; margin-top:18px; }
+.social-btn { flex:1; display:flex; justify-content:center; align-items:center; gap:10px; padding:12px; border:1px solid var(--border-color); border-radius:var(--radius-md); background:var(--bg-card); font-weight:600; font-size:0.9rem; cursor:pointer; transition:var(--transition); }
+.social-btn:hover { background:var(--bg-input); }
+.social-btn i { font-size:1.1rem; }
+
+@media (max-width: 900px) {
+    .auth-box { grid-template-columns: 1fr; border-radius: 16px; }
+    .auth-left { order: 2; padding: 22px; border-radius: 0 0 12px 12px; }
+    .auth-right { order: 1; padding: 20px; }
+    .auth-left h1 { font-size: 1.8rem; }
+    .auth-left .auth-hero-image { display: none; }
+    .auth-left p { max-width: 100%; }
 }
 
 /* --- Dashboards Layout --- */

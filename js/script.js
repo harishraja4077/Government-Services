@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.main-header');
     if (header) {
         window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
+            header.classList.toggle('scrolled', window.scrollY > 20);
         });
     }
 

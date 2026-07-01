@@ -64,42 +64,48 @@
 
 
     <!-- SECTION 3: Auth Form Section -->
-    <section class="auth-form-section" style="background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.9)), url('images/login_bg.png') center/cover no-repeat; padding-top: 100px; padding-bottom: 120px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+    <section class="auth-form-section" style="background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.9)), url('images/login_bg.png') center/cover no-repeat; padding-top: 60px; padding-bottom: 80px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
         <div class="container">
             <div class="auth-container animate-on-scroll">
-                <div class="auth-card">
-                    <div class="auth-header">
-                        <a href="index.html"><img src="images/logo.webp" alt="Gov Logo" style="height: 60px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;"></a>
-                        <h2>Portal Login</h2>
-                        <p>Access your personalized administration panel</p>
+                <div class="auth-box">
+                    <div class="auth-left">
+                        <div class="brand"><a href="index.html"><img src="images/logo.webp" alt="Gov Logo"></a></div>
+                        <h1>Welcome Back</h1>
+                        <p>Continue your digital civic journey — access services, track requests, and manage accounts securely.</p>
+                        <div class="auth-hero-image"><img src="images/about.webp" alt="Welcome image"></div>
                     </div>
-                    
-                    <div class="auth-tabs">
-                        <div class="auth-tab-btn active" data-role="user" onclick="document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active')); this.classList.add('active');"><i class="fa-solid fa-user"></i> Citizen Portal</div>
-                        <div class="auth-tab-btn" data-role="admin" onclick="document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active')); this.classList.add('active');"><i class="fa-solid fa-user-shield"></i> Employee Portal</div>
-                    </div>
-                    
-                    <form id="login-form">
-                        <div class="form-group">
-                            <label for="login-email">Registered Email Address</label>
-                            <input type="email" id="login-email" class="form-control" placeholder="Enter Your Email" required>
+
+                    <div class="auth-right">
+                        <div class="auth-card">
+                            <div class="auth-header">
+                                <h2>Login</h2>
+                                <p>Sign in to your account</p>
+                            </div>
+                            <div class="auth-tabs">
+                                <div class="auth-tab-btn active" data-role="user" onclick="document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active')); this.classList.add('active');"><i class="fa-solid fa-user"></i> Citizen Portal</div>
+                                <div class="auth-tab-btn" data-role="admin" onclick="document.querySelectorAll('.auth-tab-btn').forEach(b => b.classList.remove('active')); this.classList.add('active');"><i class="fa-solid fa-user-shield"></i> Employee Portal</div>
+                            </div>
+                            <form id="login-form">
+                                <div class="form-group">
+                                    <label for="login-email">Registered Email Address</label>
+                                    <input type="email" id="login-email" class="form-control" placeholder="Enter Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="login-password">Password</label>
+                                    <input type="password" id="login-password" class="form-control" placeholder="Enter Password" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%; margin-top: 15px;">Log In Securely</button>
+                            </form>
+                            <div class="auth-links">
+                                <a href="signup.html">Create Citizen Account</a>
+                                <a href="404.html">Forgot Password?</a>
+                                <a href="index.html">Back to Home</a>
+                            </div>
+                            <div style="text-align: center; margin-top: 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 18px;">
+                                <p>Demo Citizens: <strong>citizen@gmail.com</strong> (password123)</p>
+                                <p>Demo Admins: <strong>admin@gov.in</strong> (password123)</p>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="login-password">Password</label>
-                            <input type="password" id="login-password" class="form-control" placeholder="Enter Password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%; margin-top: 15px;">Log In Securely</button>
-                    </form>
-                    
-                    <div class="auth-links">
-                        <a href="signup.html">Create Citizen Account</a>
-                        <a href="404.html" onclick="event.preventDefault(); alert('Redirecting to password recovery. Check your email for OTP.');">Forgot Password?</a>
-                        <a href="index.html">Back to Home</a>
-                    </div>
-                    
-                    <div style="text-align: center; margin-top: 25px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border-color); padding-top: 20px;">
-                        <p>Demo Citizens: <strong>citizen@gmail.com</strong> (password123)</p>
-                        <p>Demo Admins: <strong>admin@gov.in</strong> (password123)</p>
                     </div>
                 </div>
             </div>

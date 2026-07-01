@@ -64,42 +64,49 @@
     
 
     <!-- SECTION 3: Auth Form Section -->
-    <section class="auth-form-section" style="background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.9)), url('images/login_bg.png') center/cover no-repeat; padding-top: 100px; padding-bottom: 120px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+    <section class="auth-form-section" style="background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.9)), url('images/login_bg.png') center/cover no-repeat; padding-top: 60px; padding-bottom: 80px; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
         <div class="container">
             <div class="auth-container animate-on-scroll">
-                <div class="auth-card">
-                    <div class="auth-header">
-                        <a href="index.html"><img src="images/logo.webp" alt="Gov Logo" style="height: 60px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;"></a>
-                        <h2>Citizen Sign Up</h2>
-                        <p>Register to unlock secure online municipal operations</p>
+                <div class="auth-box">
+                    <div class="auth-left">
+                        <div class="brand"><a href="index.html"><img src="images/logo.webp" alt="Gov Logo"></a></div>
+                        <h1>Create Account</h1>
+                        <p>Join millions of citizens using secure digital services. Register once and access multiple government applications seamlessly.</p>
+                        <div class="auth-hero-image"><img src="images/team.webp" alt="Register image"></div>
                     </div>
-                    
-                    <form id="signup-form">
-                        <div class="form-group">
-                            <label for="signup-name">Full Legal Name</label>
-                            <input type="text" id="signup-name" class="form-control" placeholder="Enter Your Name" required>
+
+                    <div class="auth-right">
+                        <div class="auth-card">
+                            <div class="auth-header">
+                                <h2>Sign Up</h2>
+                                <p>Create your citizen account</p>
+                            </div>
+                            <form id="signup-form">
+                                <div class="form-group">
+                                    <label for="signup-name">Full Legal Name</label>
+                                    <input type="text" id="signup-name" class="form-control" placeholder="Enter Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signup-email">Email Address</label>
+                                    <input type="email" id="signup-email" class="form-control" placeholder="Enter Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signup-password">Create Secure Password</label>
+                                    <input type="password" id="signup-password" class="form-control" placeholder="Enter Password" required minlength="6">
+                                </div>
+                                <label class="form-check">
+                                    <input type="checkbox" id="signup-agree" required>
+                                    <span>I agree to the <a href="#" style="color: var(--secondary-dark); font-weight: 600;">Citizen Data Charter</a>.</span>
+                                </label>
+                                <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%; margin-top: 20px;">Register Account</button>
+                            </form>
+                            <div class="auth-links" style="justify-content: center; gap: 10px; margin-top:16px;">
+                                <span>Already registered?</span>
+                                <a href="login.html">Sign In Here</a>
+                            </div>
+                            <div style="margin-top:12px; text-align:center;"><a href="index.html">Back to Home</a></div>
                         </div>
-                        <div class="form-group">
-                            <label for="signup-email">Email Address</label>
-                            <input type="email" id="signup-email" class="form-control" placeholder="Enter Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signup-password">Create Secure Password</label>
-                            <input type="password" id="signup-password" class="form-control" placeholder="Enter Password" required minlength="6">
-                        </div>
-                        <label class="form-check">
-                            <input type="checkbox" id="signup-agree" required>
-                            <span>I agree to the <a href="#" style="color: var(--secondary-dark); font-weight: 600;">Citizen Data Charter</a>.</span>
-                        </label>
-                        <button type="submit" class="btn btn-primary btn-glow ripple-effect" style="width: 100%; margin-top: 20px;">Register Account</button>
-                    </form>
-                    
-                    <div class="auth-links" style="justify-content: center; gap: 10px;">
-                        <span>Already registered?</span>
-                        <a href="login.html">Sign In Here</a>
-                    
                     </div>
-                    <a href="index.html">Back to Home</a>
                 </div>
             </div>
         </div>
