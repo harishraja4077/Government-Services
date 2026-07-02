@@ -1708,7 +1708,7 @@ tr:last-child td {
         height: auto;
         position: relative;
         padding: 15px 0;
-    }
+    } 
     .dashboard-wrapper {
         flex-direction: column;
     }
